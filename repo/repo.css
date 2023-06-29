@@ -4,6 +4,13 @@ body{
     font-family: minecraft;
     text-align: center;
     background-color: #3c5479;        
+    
+}
+main{
+    background-color: #3c5479;
+    color: #000000;
+    font-family: minecraft;
+    text-align: center;
 }
 p{
     font-size: 20px;
@@ -151,7 +158,7 @@ top: 80vh;
 left: 45vw;
 width: 10px;
 height: 10px;
-background-image: url(../wowie_1.gif);
+background-image: url(../src/pic/gif/gifblock.gif);
 background-size: cover;
 
 border: solid 0.5px #000000;
