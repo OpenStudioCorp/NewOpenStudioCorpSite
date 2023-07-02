@@ -1,0 +1,297 @@
+.landing-page,
+	  .landing-page * {
+		box-sizing: border-box;
+	  }
+	  .landing-page {
+		background: #221b37;
+		width: 2500px;
+		height: 2545px;
+		position: relative;
+		overflow: hidden;
+	  }
+	  .group-2 {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+
+	  }
+	  .open-studio {
+		color: #ffffff;
+		text-align: left;
+		font: 900 20px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: 68px;
+		top: 59px;
+	  }
+	  .group-1 {
+		position: absolute;
+		inset: 0;
+        left: 0px;
+		top: 0px;
+	  }
+	  .rectangle-1 {
+		background: #ffffff;
+		border-radius: 10px;
+		width: 100px;
+		height: 25px;
+		position: absolute;
+		left: 1599px;
+		top: 67px;
+	  }
+	  .join-us {
+		color: #221b37;
+		text-align: left;
+		font: 900 15px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: 1620px;
+		top: 71px;
+	  }
+	  .group-3 {
+		position: absolute;
+		inset: 0;
+        left: 600px;
+		top: 0px;
+	  }
+	  .about-us {
+		color: #c0bbcf;
+		text-align: left;
+		font: 700 15px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: 600px;
+		top: 69px;
+	  }
+	  .home {
+		color: #ffffff;
+		text-align: left;
+		font: 700 15px "Roboto Slab", sans-serif;
+		text-decoration: underline;
+		position: absolute;
+		left: 491px;
+		top: 69px;
+	  }
+	  .projects {
+		color: #c0bbcf;
+		text-align: left;
+		font: 700 15px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: 730px;
+		top: 69px;
+	  }
+	  .group-5 {
+		position: absolute;
+		inset: 0;
+        left: px;
+		top: 0px;
+	  }
+	  .let-s-make-changes-together-anywhere {
+		text-align: center;
+		font: 900 64px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: calc(50% - 311px);
+		top: 242px;
+	  }
+	  .let-s-make-changes-together-anywhere-span {
+		color: #ffffff;
+		font: 900 64px "Roboto Slab", sans-serif;
+	  }
+	  .let-s-make-changes-together-anywhere-span2 {
+		color: #ff1c56;
+		font: 900 64px "Roboto Slab", sans-serif;
+	  }
+	  .let-s-make-changes-together-anywhere-span3 {
+		color: #ffffff;
+		font: 900 64px "Roboto Slab", sans-serif;
+	  }
+	  .open-studio-is-a-community-for-open-source-developers-from-all-over-the-world {
+		color: #c0bbcf;
+		text-align: left;
+		font: 700 15px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: calc(50% - 282px);
+		top: 439px;
+	  }
+	  .group-4 {
+		position: absolute;
+		inset: 0;
+        left: 600px;
+		top: 0px;
+	  }
+	  .world-1 {
+		position: absolute;
+		left: 42px;
+		top: 621px;
+		overflow: visible;
+	  }
+	  .group-7 {
+		position: absolute;
+		inset: 0;
+        left: 600px;
+		top: 0px;
+	  }
+	  .group-6 {
+		width: 143px;
+		height: 35.75px;
+		position: static;
+        left: 90px;
+		top: 0px;
+	  }
+	  .rectangle-12 {
+		background: #ff1c56;
+		border-radius: 10px;
+		width: 143px;
+		height: 35.75px;
+		position: absolute;
+		left: 499px;
+		top: 522px;
+	  }
+	  .join-us2 {
+		color: #ffffff;
+		text-align: left;
+		font: 900 20px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: 533px;
+		top: 526px;
+		width: 75.79px;
+		height: 28.6px;
+	  }
+	  .explore-more {
+		color: #ffffff;
+		text-align: left;
+		font: 900 16px "Roboto Slab", sans-serif;
+		text-decoration: underline;
+		position: absolute;
+		left: 676px;
+		top: 530px;
+	  }
+	  .ellipse-2 {
+		position: absolute;
+		left: -303px;
+		top: -371px;
+		overflow: visible;
+	  }
+	  .rectangle-2 {
+		background: #ffffff;
+		width: 262.99px;
+		height: 61px;
+		position: absolute;
+		left: 850px;
+		top: 1279px;
+		transform-origin: 0 0;
+		transform: rotate(-5deg) scale(.999, 1.001);
+	  }
+	  .open-source-is-the-way-we-make-impact {
+		text-align: left;
+		font: 900 40px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: calc(50% - 388px);
+		top: 1270px;
+	  }
+	  .open-source-is-the-way-we-make-impact-span {
+		color: #ff1c56;
+		font: 900 40px "Roboto Slab", sans-serif;
+	  }
+	  .open-source-is-the-way-we-make-impact-span2 {
+		color: #ffffff;
+		font: 900 40px "Roboto Slab", sans-serif;
+	  }
+	  .what-have-we-built {
+		color: #ffffff;
+		text-align: left;
+		font: 900 40px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: calc(50% - 197px);
+		top: 1651px;
+	  }
+	  .we-are-a-community-of-open-source-developers-from-across-the-world-we-chat-learn-share-and-build-with-each-other {
+		color: #c0bbcf;
+		text-align: center;
+		font: 900 28px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: calc(50% - 476px);
+		top: 1404px;
+	  }
+	  .rectangle-4 {
+		background: linear-gradient(
+		  155.89deg,
+		  rgba(255, 255, 255, 0.08) 0%,
+		  rgba(255, 255, 255, 0.04) 100%
+		);
+		border-radius: 20px;
+		width: 259px;
+		height: 322px;
+		position: absolute;
+		left: calc(50% - 130px);
+		top: 1790px;
+		box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.11);
+		backdrop-filter: blur(10px);
+	  }
+	  .rectangle-3 {
+		background: linear-gradient(
+		  155.89deg,
+		  rgba(255, 255, 255, 0.08) 0%,
+		  rgba(255, 255, 255, 0.04) 100%
+		);
+		border-radius: 20px;
+		width: 259px;
+		height: 322px;
+		position: absolute;
+		left: 1390px;
+		top: 1790px;
+		box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.11);
+		backdrop-filter: blur(10px);
+	  }
+	  .rectangle-5 {
+		background: linear-gradient(
+		  155.89deg,
+		  rgba(255, 255, 255, 0.08) 0%,
+		  rgba(255, 255, 255, 0.04) 100%
+		);
+		border-radius: 20px;
+		width: 259px;
+		height: 322px;
+		position: absolute;
+		left: 850px;
+		top: 1790px;
+		box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.11);
+		backdrop-filter: blur(10px);
+	  }
+	  .group-8 {
+		position: absolute;
+		inset: 0;
+        left: 0px;
+		top: 0px;
+	  }
+	  .rectangle-7 {
+		border-radius: 10px;
+		border-style: solid;
+		border-color: #ff1c56;
+		border-width: 3px;
+		width: 218px;
+		height: 52px;
+		position: absolute;
+		left: calc(50% - 109px);
+		top: 2430px;
+	  }
+	  .view-all {
+		color: #ffffff;
+		text-align: left;
+		font: 900 24px "Roboto Slab", sans-serif;
+		position: absolute;
+		left: 1199px;
+		top: 2440px;
+	  }
+	  .ellipse-22 {
+		position: absolute;
+		left: 866px;
+		top: 2135px;
+		overflow: visible;
+	  }
+	  .want-to-join {
+		color: #ff1c56;
+		text-align: left;
+		font: 900 28px "Roboto Slab", sans-serif;
+		text-decoration: underline;
+		position: absolute;
+		left: calc(50% - 90px);
+		top: 1509px;
+	  }
