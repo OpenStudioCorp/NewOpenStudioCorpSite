@@ -2,8 +2,9 @@ import requests
 import json
 import tkinter as tk
 import subprocess
-# this is the package manager pyton, just want to keep this here for development and testing
+
 def install(link):
+    # Add your download and install code here
     print(f"Downloading and installing {link}")
     try:
         subprocess.Popen(f"git clone {link}", shell=True)
