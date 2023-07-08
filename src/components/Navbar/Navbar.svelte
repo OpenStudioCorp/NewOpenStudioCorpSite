@@ -12,51 +12,67 @@
   let currentLocation = "home"
 </script>
 
-<nav class="mobile-nav">
-  <Link to="/">OpenStudio</Link>
-  <button
-    class={`${navButtonActive ? "active-button" : "button"}`}
-    on:click={toggleButtonState}
-  >
-    <div class="line first-line" />
-    <div class="line second-line" />
-    <div class="line third-line" />
-  </button>
-  <div
-    class={`mobile-sidebar ${
-      navButtonActive ? "mobile-sidebar-visible" : null
-    }`}
-  >
+<nav class="navbar">
+  {#if screenWidth < 1024}
+    <Link to="/" on:click={() => handleLinkClick("home")}>OpenStudio</Link>
+    <button
+      class={`${navButtonActive ? "active-button" : "button"}`}
+      on:click={toggleButtonState}
+    >
+      <div class="line first-line" />
+      <div class="line second-line" />
+      <div class="line third-line" />
+    </button>
+    <div
+      class={`mobile-sidebar ${
+        navButtonActive ? "mobile-sidebar-visible" : null
+      } ${currentLocation}`}
+    >
+      <a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
+      <Link
+        to="/"
+        class="link home-link"
+        on:click={() => handleLinkClick("home")}>Home</Link
+      >
+      <Link
+        to="/about"
+        class="link about-link"
+        on:click={() => handleLinkClick("about")}>About</Link
+      >
+      <Link
+        to="projects"
+        class="link projects-link"
+        on:click={() => handleLinkClick("projects")}>Projects</Link
+      >
+    </div>
+  {/if}
+  {#if screenWidth >= 1024}
+    <Link to="/" class="logo-title" on:click={() => handleLinkClick("home")}
+      >OpenStudio</Link
+    >
+    <div class={`nav-links ${currentLocation}`}>
+      <Link
+        to="/"
+        class="link home-link"
+        on:click={() => handleLinkClick("home")}>Home</Link
+      >
+      <Link
+        to="/about"
+        class="link about-link"
+        on:click={() => handleLinkClick("about")}>About</Link
+      >
+      <Link
+        to="projects"
+        class="link projects-link"
+        on:click={() => handleLinkClick("projects")}>Projects</Link
+      >
+    </div>
     <a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
-    <Link
-      to="/"
-      class={`link ${currentLocation === "home" ? "active-link" : ""}`}
-      on:click={() => handleLinkClick("home")}>Home</Link
-    >
-    <Link
-      to="/about"
-      class={`link ${currentLocation === "about" ? "active-link" : ""}`}
-      on:click={() => handleLinkClick("about")}>About</Link
-    >
-    <Link
-      to="projects"
-      class={`link ${currentLocation === "projects" ? "active-link" : ""}`}
-      on:click={() => handleLinkClick("projects")}>Project</Link
-    >
-  </div>
-
-  <!-- 
-  <div>
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="projects">Project</Link>
-  </div>
-  <a href="https://discord.gg/7cFCB8qBkf">Join us</a>
-  -->
+  {/if}
 </nav>
 
 <style>
-  .mobile-nav {
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,6 +80,11 @@
     margin-top: 1rem;
     font-size: 1.2rem;
     font-weight: bold;
+  }
+  .nav-links {
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
   }
   .line {
     width: 30px;
@@ -118,12 +139,20 @@
     color: var(--darkBlue);
     width: fit-content;
     border-radius: 10px;
-    padding: 0.5rem 2rem;
+    padding: 0.2rem 2rem;
   }
   :global(.link) {
     color: var(--lightGray);
   }
-  :global(.active-link) {
+  .home :global(.home-link) {
+    color: var(--white);
+    text-decoration: underline;
+  }
+  .about :global(.about-link) {
+    color: var(--white);
+    text-decoration: underline;
+  }
+  .projects :global(.projects-link) {
     color: var(--white);
     text-decoration: underline;
   }
