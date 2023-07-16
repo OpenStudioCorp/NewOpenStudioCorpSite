@@ -44,6 +44,7 @@
     align-items: center;
   }
   .image-container {
+    border: 1px solid red;
     margin-block: 2rem;
     width: 150px;
     height: 150px;
@@ -65,22 +66,32 @@
   }
   .big {
     display: flex;
+    flex-direction: column;
     align-items: center;
     max-width: 900px;
     margin-inline: auto;
   }
-  .big .image-container {
-    width: 200px;
-    height: 200px;
-    margin-left: 4rem;
-  }
   .big .info-container {
-    text-align: left;
-    margin-left: 2rem;
-    align-self: flex-start;
-    margin-top: 2rem;
+    text-align: center;
+    margin-inline: auto;
+    margin-block: 2rem;
   }
   .info-container p {
     color: var(--lightGray);
+  }
+  @media screen and (min-width: 640px) {
+    .big {
+      flex-direction: row;
+    }
+    .big .info-container {
+      text-align: left;
+      margin-left: 2rem;
+      align-self: flex-start;
+    }
+    .big .image-container {
+      width: 200px;
+      height: 200px;
+      margin-left: 4rem;
+    }
   }
 </style>
