@@ -6,7 +6,7 @@
   import LandingPage from "./pages/LandingPage.svelte"
   import AboutPage from "./pages/AboutPage.svelte"
   import ProjectsPage from "./pages/ProjectsPage.svelte"
-  import Navbar from "./components/shared/Navbar/Navbar.svelte"
+  import Navbar from "./components/Shared/Navbar/Navbar.svelte"
 
   export let url = "/"
 </script>
