@@ -1,6 +1,7 @@
 <script lang="ts">
     
     import { onMount } from "svelte"
+  import Card from "../components/Shared/Card/Card.svelte"
 
 
     // TODO:
@@ -13,6 +14,7 @@
     
     $: hashesToFill = Math.floor(loadingProgress * HASHTAGS_IN_PROGRESS_BAR);
 
+    //  TEST
     const t = () => {
         if (loadingProgress >= 1) {
             clearInterval(this);
@@ -57,6 +59,40 @@
         />
     </div>
 
+    <div class="projects-list">
+
+        <Card
+            cardData={{
+                image: "",
+                title: "Project one",
+                link: "",
+                size: 'big',
+                description: "tralala"
+            }}
+        />
+
+        <Card
+            cardData={{
+                image: "",
+                title: "Project two",
+                link: "",
+                size: 'big',
+                description: "tralala"
+            }}
+        />
+
+        <Card
+            cardData={{
+                image: "",
+                title: "Project three",
+                link: "",
+                size: 'big',
+                description: "tralala"
+            }}
+        />
+
+    </div>
+
 </main>
 
 <style>
@@ -67,10 +103,6 @@
         align-items: center;
         width: 100%;
         height: 100%;
-
-        --horizontal-margin: 2em;
-        --vertical-margin: 4em;
-        --search-icon-size: 15px;
 
         --full-width: calc(100% - 2 * var(--horizontal-margin));
     }
@@ -91,6 +123,7 @@
     
     .projects-load-bar {
         margin: var(--vertical-margin) var(--horizontal-margin) var(--vertical-margin) var(--horizontal-margin);
+        white-space: nowrap;
     }
 
     .search {
@@ -101,7 +134,7 @@
     }
 
     .search > img {
-        width: var(--search-icon-size);
+        width: 1em;
         filter: grayscale(1) invert(1) brightness(0.5);
         -webkit-filter: grayscale(1) invert(1) brightness(0.5);
     }
@@ -113,30 +146,50 @@
         color: white;
     }
 
+    .projects-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--card-gap);
+        width: var(--full-width);
+        padding-bottom: calc(2 * var(--vertical-margin));
+        margin: var(--vertical-margin) var(--horizontal-margin) var(--vertical-margin) var(--horizontal-margin);
+    }
+
     @media screen and (max-width: 1024px) {
         main {
-            font-size: 40px;
+            font-size: 24px;
+            --horizontal-margin: 10em;
+            --vertical-margin: 3em;
+            --card-gap: 5em;
         }
     }
 
     @media screen and (max-width: 768px) {
         main {
-            font-size: 24px;
+            font-size: 32px;
+            --horizontal-margin: 4em;
+            --vertical-margin: 5em;
+            --card-gap: 5em;
         }
     }
     
     @media screen and (max-width: 640px) {
         main {
-            font-size: 18px;
+            font-size: 24px;
+            --horizontal-margin: 5em;
+            --vertical-margin: 5em;
+            --card-gap: 4em;
         }
     }
 
     @media screen and (max-width: 320px) {
-        main {            
+        main {
             font-size: 12px;
+            --horizontal-margin: 2em;
+            --vertical-margin: 4em;
+            --card-gap: 2em;
         }
     }
     
-    
-
 </style>
