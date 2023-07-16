@@ -156,25 +156,16 @@
         margin: var(--vertical-margin) var(--horizontal-margin) var(--vertical-margin) var(--horizontal-margin);
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (min-width: 320px) {
         main {
-            font-size: 24px;
-            --horizontal-margin: 10em;
-            --vertical-margin: 3em;
-            --card-gap: 5em;
+            font-size: 12px;
+            --horizontal-margin: 2em;
+            --vertical-margin: 4em;
+            --card-gap: 2em;
         }
     }
 
-    @media screen and (max-width: 768px) {
-        main {
-            font-size: 32px;
-            --horizontal-margin: 4em;
-            --vertical-margin: 5em;
-            --card-gap: 5em;
-        }
-    }
-    
-    @media screen and (max-width: 640px) {
+    @media screen and (min-width: 640px) {
         main {
             font-size: 24px;
             --horizontal-margin: 5em;
@@ -183,12 +174,21 @@
         }
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (min-width: 768px) {
         main {
-            font-size: 12px;
-            --horizontal-margin: 2em;
-            --vertical-margin: 4em;
-            --card-gap: 2em;
+            font-size: 32px;
+            --horizontal-margin: 4em;
+            --vertical-margin: 5em;
+            --card-gap: 5em;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        main {
+            font-size: 24px;
+            --horizontal-margin: 10em;
+            --vertical-margin: 3em;
+            --card-gap: 5em;
         }
     }
     
