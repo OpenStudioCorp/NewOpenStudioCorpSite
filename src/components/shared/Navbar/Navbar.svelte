@@ -1,5 +1,5 @@
 <script>
-  import { Link } from "svelte-routing"
+  //import { Link } from "svelte-routing"
   const toggleButtonState = () => {
     navButtonActive = !navButtonActive
   }
@@ -14,7 +14,7 @@
 
 <nav class="navbar">
   {#if screenWidth < 1024}
-    <Link to="/" on:click={() => handleLinkClick("home")}>OpenStudio</Link>
+    <!-- <Link to="/" on:click={() => handleLinkClick("home")}>OpenStudio</Link> -->
     <button
       class={`${navButtonActive ? "active-button" : "button"}`}
       on:click={toggleButtonState}
@@ -29,6 +29,7 @@
       } ${currentLocation}`}
     >
       <a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
+      <!--
       <Link
         to="/"
         class="link home-link"
@@ -44,13 +45,18 @@
         class="link projects-link"
         on:click={() => handleLinkClick("projects")}>Projects</Link
       >
+      -->
+      <a href="/#/">Home</a>
+      <a href="/#/about">About</a>
+      <a href="/#/projects">Project</a>
     </div>
   {/if}
   {#if screenWidth >= 1024}
-    <Link to="/" class="logo-title" on:click={() => handleLinkClick("home")}
+    <!-- <Link to="/" class="logo-title" on:click={() => handleLinkClick("home")}
       >OpenStudio</Link
-    >
+    > -->
     <div class={`nav-links ${currentLocation}`}>
+      <!--
       <Link
         to="/"
         class="link home-link"
@@ -66,6 +72,10 @@
         class="link projects-link"
         on:click={() => handleLinkClick("projects")}>Projects</Link
       >
+      -->
+      <a href="/#/">Home</a>
+      <a href="/#/about">About</a>
+      <a href="/#/projects">Project</a>
     </div>
     <a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
   {/if}
