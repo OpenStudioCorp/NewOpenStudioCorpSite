@@ -1,11 +1,6 @@
 <script>
-  //import { Link } from "svelte-routing"
   const toggleButtonState = () => {
     navButtonActive = !navButtonActive
-  }
-  const handleLinkClick = (location) => {
-    navButtonActive = false
-    currentLocation = location
   }
   let screenWidth = window.innerWidth
   let navButtonActive = false
@@ -14,7 +9,7 @@
 
 <nav class="navbar">
   {#if screenWidth < 1024}
-    <!-- <Link to="/" on:click={() => handleLinkClick("home")}>OpenStudio</Link> -->
+    <a href="#/">OpenStudio</a>  <!-- TODO: apply styles -->
     <button
       class={`${navButtonActive ? "active-button" : "button"}`}
       on:click={toggleButtonState}
@@ -29,50 +24,17 @@
       } ${currentLocation}`}
     >
       <a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
-      <!--
-      <Link
-        to="/"
-        class="link home-link"
-        on:click={() => handleLinkClick("home")}>Home</Link
-      >
-      <Link
-        to="/about"
-        class="link about-link"
-        on:click={() => handleLinkClick("about")}>About</Link
-      >
-      <Link
-        to="projects"
-        class="link projects-link"
-        on:click={() => handleLinkClick("projects")}>Projects</Link
-      >
-      -->
+
+      <!-- TODO: apply styles -->
       <a href="/#/">Home</a>
       <a href="/#/about">About</a>
       <a href="/#/projects">Project</a>
     </div>
   {/if}
   {#if screenWidth >= 1024}
-    <!-- <Link to="/" class="logo-title" on:click={() => handleLinkClick("home")}
-      >OpenStudio</Link
-    > -->
+    <a href="#/">OpenStudio</a>  <!-- TODO: apply styles -->
     <div class={`nav-links ${currentLocation}`}>
-      <!--
-      <Link
-        to="/"
-        class="link home-link"
-        on:click={() => handleLinkClick("home")}>Home</Link
-      >
-      <Link
-        to="/about"
-        class="link about-link"
-        on:click={() => handleLinkClick("about")}>About</Link
-      >
-      <Link
-        to="projects"
-        class="link projects-link"
-        on:click={() => handleLinkClick("projects")}>Projects</Link
-      >
-      -->
+      <!-- TODO: apply styles -->
       <a href="/#/">Home</a>
       <a href="/#/about">About</a>
       <a href="/#/projects">Project</a>
