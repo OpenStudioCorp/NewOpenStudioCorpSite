@@ -28,30 +28,55 @@
   </div>
   <div class="projects">
     <h2>What have we built?</h2>
-    <div>
+    <div class="projects-cards">
       <Card
         cardData={{
-          image: "image",
-          title: "titleweeeeeeeeweeef efefe efe",
-          link: "link",
-          size: "big",
-          description: "description",
+          image: "",
+          title: "Project 1",
+          link: "",
+          size: "small",
+          alignment: "top",
         }}
       />
-      <div />
-      <div />
-      <div />
+      <Card
+        cardData={{
+          image: "",
+          title: "Project 2",
+          link: "",
+          size: "small",
+          alignment: "bottom",
+        }}
+      />
+      <Card
+        cardData={{
+          image: "",
+          title: "Project 3",
+          link: "",
+          size: "small",
+          alignment: "middle",
+        }}
+      />
     </div>
-    <button>View All</button>
+    <button class="viewAll-button">View All</button>
   </div>
 </main>
 
 <style>
+  :root {
+    --titleFontSize: 2rem;
+    --secondTitleFontSize: 1.5rem;
+    --buttonFontSize: 1.2rem;
+    --normalFontSize: 1rem;
+  }
+  * {
+    font-size: var(--normalFontSize);
+  }
   .colored-word {
     color: var(--red);
+    font-size: var(--titleFontSize);
   }
   h1 {
-    font-size: 2rem;
+    font-size: var(--titleFontSize);
     font-weight: bold;
     margin-top: 6rem;
     margin-inline: 0.2rem;
@@ -71,9 +96,10 @@
     padding-block: 0.2rem;
     border-radius: 10px;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: var(--buttonFontSize);
   }
   .buttons a {
+    font-size: var(--buttonFontSize);
     text-decoration: underline;
   }
   header img {
@@ -83,10 +109,11 @@
     margin-top: 4rem;
     margin-inline: 0.2rem;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: var(--secondTitleFontSize);
   }
   h2 span {
     color: var(--red);
+    font-size: var(--secondTitleFontSize);
     position: relative;
     z-index: 2;
     margin-right: 3px;
@@ -111,6 +138,57 @@
   .main-texts a {
     color: var(--red);
     text-decoration: underline;
-    font-size: 1.2rem;
+    font-size: var(--buttonFontSize);
+  }
+  .projects-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 2rem;
+    gap: 1rem;
+  }
+  .viewAll-button {
+    border: 3px solid var(--red);
+    padding-inline: 2rem;
+    padding-block: 0.2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-size: var(--buttonFontSize);
+  }
+  @media screen and (min-width: 640px) {
+    :root {
+      --titleFontSize: 2.2rem;
+      --secondTitleFontSize: 1.7rem;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    :root {
+      --titleFontSize: 2.5rem;
+      --secondTitleFontSize: 2rem;
+      --normalFontSize: 1.1rem;
+    }
+    header img {
+      display: block;
+      max-width: 70%;
+      margin-block: 2rem;
+      margin-inline: auto;
+    }
+    .projects-cards {
+      flex-direction: row;
+      justify-content: center;
+      height: 550px;
+      gap: 3rem;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    :root {
+      --titleFontSize: 3rem;
+      --secondTitleFontSize: 2.5rem;
+      --buttonFontSize: 1.5rem;
+      --normalFontSize: 1.2rem;
+    }
+    .projects-cards {
+      gap: 5rem;
+    }
   }
 </style>

@@ -6,6 +6,7 @@
   } & (
     | {
         size: "small"
+        alignment?: "top" | "middle" | "bottom"
       }
     | {
         size: "big"
@@ -15,7 +16,11 @@
   export let cardData: props
 </script>
 
-<div class={`${cardData.size} card`}>
+<div
+  class={`${cardData.size} card ${
+    cardData.size === "small" ? cardData.alignment : ""
+  }`}
+>
   <div class="image-container">
     <img src={cardData.image} alt={cardData.title} />
   </div>
@@ -44,7 +49,6 @@
     align-items: center;
   }
   .image-container {
-    border: 1px solid red;
     margin-block: 2rem;
     width: 150px;
     height: 150px;
@@ -92,6 +96,19 @@
       width: 200px;
       height: 200px;
       margin-left: 4rem;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .top {
+      align-self: self-start;
+      margin-top: 1rem;
+    }
+    .middle {
+      align-self: center;
+    }
+    .bottom {
+      align-self: self-end;
+      margin-bottom: 1rem;
     }
   }
 </style>

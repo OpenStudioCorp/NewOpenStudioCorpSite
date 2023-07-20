@@ -1,15 +1,21 @@
-<script>
+<script lang="ts">
+  import { location } from "svelte-spa-router"
   const toggleButtonState = () => {
     navButtonActive = !navButtonActive
   }
   let screenWidth = window.innerWidth
   let navButtonActive = false
-  let currentLocation = "home"
+  window.addEventListener("hashchange", () => {
+    let url = $location.replace("/", "")
+    currentLocation = url === "" ? "home" : url
+  })
+  let url = $location.replace("/", "")
+  let currentLocation = url === "" ? "home" : url
 </script>
 
 <nav class="navbar">
   {#if screenWidth < 1024}
-    <a href="#/">OpenStudio</a>  <!-- TODO: apply styles -->
+    <a href="#/">OpenStudio</a>
     <button
       class={`${navButtonActive ? "active-button" : "button"}`}
       on:click={toggleButtonState}
@@ -25,19 +31,51 @@
     >
       <a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
 
-      <!-- TODO: apply styles -->
-      <a href="/#/">Home</a>
-      <a href="/#/about">About</a>
-      <a href="/#/projects">Project</a>
+      <a
+        href="/#/"
+        on:click={() => {
+          navButtonActive = false
+          currentLocation = "home"
+        }}
+        class="link home-link">Home</a
+      >
+      <a
+        href="/#/about"
+        on:click={() => {
+          navButtonActive = false
+          currentLocation = "about"
+        }}
+        class="link about-link">About</a
+      >
+      <a
+        href="/#/projects"
+        on:click={() => {
+          navButtonActive = false
+          currentLocation = "projects"
+        }}
+        class="link projects-link"
+        >Project
+      </a>
     </div>
   {/if}
   {#if screenWidth >= 1024}
-    <a href="#/">OpenStudio</a>  <!-- TODO: apply styles -->
+    <a href="#/">OpenStudio</a>
     <div class={`nav-links ${currentLocation}`}>
-      <!-- TODO: apply styles -->
-      <a href="/#/">Home</a>
-      <a href="/#/about">About</a>
-      <a href="/#/projects">Project</a>
+      <a
+        href="/#/"
+        class="link home-link"
+        on:click={() => (currentLocation = "home")}>Home</a
+      >
+      <a
+        href="/#/about"
+        class="link about-link"
+        on:click={() => (currentLocation = "about")}>About</a
+      >
+      <a
+        href="/#/projects"
+        class="link projects-link"
+        on:click={() => (currentLocation = "projects")}>Project</a
+      >
     </div>
     <a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
   {/if}
@@ -75,7 +113,7 @@
   .button,
   .active-button {
     position: relative;
-    z-index: 2;
+    z-index: 4;
     width: 30px;
     height: 21px;
   }
@@ -102,7 +140,9 @@
     justify-content: space-evenly;
     align-items: center;
     overflow-x: hidden;
+    z-index: 3;
   }
+
   .mobile-sidebar-visible {
     inset: 0;
   }
@@ -113,18 +153,18 @@
     border-radius: 10px;
     padding: 0.2rem 2rem;
   }
-  :global(.link) {
+  .link {
     color: var(--lightGray);
   }
-  .home :global(.home-link) {
+  .home .home-link {
     color: var(--white);
     text-decoration: underline;
   }
-  .about :global(.about-link) {
+  .about .about-link {
     color: var(--white);
     text-decoration: underline;
   }
-  .projects :global(.projects-link) {
+  .projects .projects-link {
     color: var(--white);
     text-decoration: underline;
   }
