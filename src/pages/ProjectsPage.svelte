@@ -1,32 +1,47 @@
 <script lang="ts">
     
     import { onMount } from "svelte"
-  import Card from "../components/Shared/Card/Card.svelte"
+    import Card from "../components/Shared/Card/Card.svelte"
 
 
     // TODO:
     // Projects loading
 
+    const TEST = true;
     const HASHTAGS_IN_PROGRESS_BAR = 35;
+    const MAX_QUERY_LENGTH = 30;
 
     // [0-1]
     let loadingProgress = 0;
+    let searchQuery: string;
     
     $: hashesToFill = Math.floor(loadingProgress * HASHTAGS_IN_PROGRESS_BAR);
 
-    //  TEST
-    const t = () => {
-        if (loadingProgress >= 1) {
-            clearInterval(this);
-            return;
+    $: if (searchQuery != undefined) { // ensures triggering on variable change
+        let trimmedQuery = searchQuery.trim();
+        if (trimmedQuery.length > MAX_QUERY_LENGTH) {
+            trimmedQuery = trimmedQuery.substring(0, 30);
         }
 
-        loadingProgress += 1/HASHTAGS_IN_PROGRESS_BAR;
+        console.log("searching for: ", trimmedQuery);
     }
 
-    onMount(() => {
-        setInterval(t, 1000);
-    })
+    if (TEST) {
+    
+        const t = () => {
+            if (loadingProgress >= 1) {
+                clearInterval(this);
+                return;
+            }
+
+            loadingProgress += 1/HASHTAGS_IN_PROGRESS_BAR;
+        }
+
+        onMount(() => {
+            setInterval(t, 1000);
+        });
+
+    }
 
 </script>
 
@@ -56,6 +71,7 @@
         <input
             type="text"
             placeholder="Search..."
+            bind:value={searchQuery}
         />
     </div>
 
@@ -140,7 +156,7 @@
     }
 
     .search > input {
-        width: calc(100% - var(--search-icon-size));
+        width: 100%;
         background-color: transparent;
         border: none;
         color: white;
@@ -186,7 +202,7 @@
     @media screen and (min-width: 1024px) {
         main {
             font-size: 24px;
-            --horizontal-margin: 10em;
+            --horizontal-margin: 20em;
             --vertical-margin: 3em;
             --card-gap: 5em;
         }
