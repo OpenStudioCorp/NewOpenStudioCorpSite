@@ -1,38 +1,59 @@
-# create-svelte
+# Open-Studio
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Website Redesign Repository
 
-## Creating a project
+This repository contains the redesign of [OpenStudioCorp.github.io], a project aimed at improving the user experience and visual aesthetics of the original website.
 
-If you're seeing this, you've probably already done this step. Congrats!
+Technologies Used:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- **Svelte UI framework**.
+- **Vanilla CSS** - We don't use any additional libraries or preprocessors.
+- **Node.JS package manager**.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Getting Started
 
-## Developing
+To get started with this project, follow the steps below:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Prerequisites
 
-```bash
-npm run dev
+Node.js (version 12 or higher) and npm (Node Package Manager) must be installed on your system.
+Installation
+Clone this repository to your local machine using the following command:
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+`git clone https://github.com/OpenStudioCorp/NewOpenStudioCorpSite.git`
+Navigate to the project directory:
 
-## Building
+`cd NewOpenStudioCorpSite`
+Install the project dependencies:
 
-To create a production version of your app:
+`npm install`
 
-```bash
-npm run build
-```
+## Development
 
-You can preview the production build with `npm run preview`.
+To start the development server and preview the website locally, run the following command:
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+`npm run dev`
+This will compile the Svelte components, start a local development server, and open the website in your default browser. Any changes you make to the source code will automatically trigger a hot reload, allowing you to see the updates instantly.
+
+## Building for Production
+
+To build the optimized production version of the website, you can use the following command:
+
+`npm run build`
+
+This will generate a public directory containing the optimized static assets that can be deployed to a web server.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
+- Fork this repository.
+- Create a new branch for your feature or bug fix.
+- Commit your changes and push the branch to your fork.
+- Open a pull request from your branch to the main branch of this repository.
+- Provide a detailed description of your changes and why they should be merged.
+- Please ensure that your code adheres to the project's coding guidelines and passes any existing tests before submitting a pull request.
+
+## License
+
+This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as per the terms of this license.
