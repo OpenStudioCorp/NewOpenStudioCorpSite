@@ -1,7 +1,7 @@
 <script lang="ts">
     
     import { onMount } from "svelte"
-    import Card from "../components/Shared/Card/Card.svelte"
+    import Card from "../../components/Shared/Card/Card.svelte"
 
 
     // TODO:
