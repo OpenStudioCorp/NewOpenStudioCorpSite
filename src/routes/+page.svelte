@@ -11,10 +11,12 @@
 	<p class="header-description">
 		open studio is a community for open source developers from all over the world
 	</p>
+
 	<div class="buttons">
 		<button>Join us</button>
 		<a href="#main-texts">Explore more</a>
 	</div>
+
 	<div class="image-container">
 		<img src="/assets/world.svg" alt="world map" />
 		{#each locations as location, index}
@@ -22,6 +24,7 @@
 		{/each}
 	</div>
 </header>
+
 <main>
 	<div class="main-texts" id="main-texts">
 		<h2><span>Open Source</span> is the way we make Impact</h2>
@@ -67,27 +70,33 @@
 </main>
 
 <style>
+
 	* {
 		font-size: var(--normalFontSize);
 	}
+
 	.colored-word {
 		color: var(--red);
 		font-size: var(--titleFontSize);
 	}
+
 	h1 {
 		font-size: var(--titleFontSize);
 		font-weight: bold;
 		margin-top: 3rem;
 		margin-inline: 0.2rem;
 	}
+
 	.header-description {
 		color: var(--lightGray);
 		margin-top: 2rem;
 		text-wrap: balance;
 	}
+
 	.buttons {
 		margin-top: 2rem;
 	}
+
 	.buttons button {
 		margin-right: 1rem;
 		background-color: var(--red);
@@ -97,19 +106,23 @@
 		font-weight: bold;
 		font-size: var(--buttonFontSize);
 	}
+
 	.buttons a {
 		font-size: var(--buttonFontSize);
 		text-decoration: underline;
 	}
+
 	.image-container {
 		display: none;
 	}
+
 	h2 {
 		margin-top: 4rem;
 		margin-inline: 0.2rem;
 		font-weight: bold;
 		font-size: var(--secondTitleFontSize);
 	}
+
 	h2 span {
 		color: var(--red);
 		font-size: var(--secondTitleFontSize);
@@ -117,6 +130,7 @@
 		z-index: 2;
 		margin-right: 3px;
 	}
+
 	h2 span:before {
 		content: '';
 		background-color: var(--white);
@@ -128,17 +142,20 @@
 		padding: 3px;
 		transform: skew(-3deg) rotate(-3deg);
 	}
+
 	.main-texts p {
 		text-wrap: balance;
 		margin-top: 2rem;
 		margin-bottom: 1rem;
 		color: var(--lightGray);
 	}
+
 	.main-texts a {
 		color: var(--red);
 		text-decoration: underline;
 		font-size: var(--buttonFontSize);
 	}
+
 	.projects-cards {
 		display: flex;
 		flex-direction: column;
@@ -146,6 +163,7 @@
 		margin-block: 2rem;
 		gap: 1rem;
 	}
+
 	.viewAll-button {
 		border: 3px solid var(--red);
 		padding-inline: 2rem;
@@ -154,12 +172,14 @@
 		margin-bottom: 1rem;
 		font-size: var(--buttonFontSize);
 	}
+
 	@media screen and (min-width: 640px) {
 		:root {
 			--titleFontSize: 2.2rem;
 			--secondTitleFontSize: 1.7rem;
 		}
 	}
+
 	@media screen and (min-width: 1024px) {
 		:root {
 			--titleFontSize: 2.5rem;
@@ -180,6 +200,7 @@
 			gap: 3rem;
 		}
 	}
+	
 	@media screen and (min-width: 1280px) {
 		:root {
 			--titleFontSize: 3rem;
@@ -191,4 +212,5 @@
 			gap: 5rem;
 		}
 	}
+
 </style>

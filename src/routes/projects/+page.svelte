@@ -45,7 +45,7 @@
 		<p><span class="red-text">$</span> projects load --all</p>
 		<p>
 			|__ waiting for your contribution
-			{Math.round(loadingProgress * 100)}%
+			{Math.max(Math.min(Math.round(loadingProgress * 100), 100), 0)}%
 		</p>
 	</div>
 

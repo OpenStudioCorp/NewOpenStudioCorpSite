@@ -1,8 +1,8 @@
-type location = {
+type Location = {
 	top: number;
 	left: number;
 };
-const locations: location[] = [
+const locations: Location[] = [
 	{
 		//USA 1
 		top: 25,
