@@ -1,8 +1,9 @@
-type location = {
-	top: number;
-	left: number;
+type Location = {
+	top: number,
+	left: number
 };
-const locations: location[] = [
+
+const locations: Location[] = [
 	{
 		//USA 1
 		top: 25,
@@ -59,4 +60,5 @@ const locations: location[] = [
 		left: 83
 	}
 ];
+
 export default locations;
