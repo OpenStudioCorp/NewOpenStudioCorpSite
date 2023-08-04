@@ -1,8 +1,7 @@
 type Developer = {
-	name: string;
-	profilePicture?: string;
-	github?: string;
-	personalLink?: string;
+	name: string,
+	profilePicture: string,
+	link: string
 };
 
 export default Developer;
