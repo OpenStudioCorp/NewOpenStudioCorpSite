@@ -55,7 +55,7 @@ const locations: location[] = [
 	},
 	{
 		//South Korea
-		top: 30,
+		top: 31,
 		left: 83
 	}
 ];

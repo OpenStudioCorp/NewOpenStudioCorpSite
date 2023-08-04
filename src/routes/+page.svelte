@@ -13,7 +13,7 @@
 	</p>
 	<div class="buttons">
 		<button>Join us</button>
-		<a href="#">Explore more</a>
+		<a href="#main-texts">Explore more</a>
 	</div>
 	<div class="image-container">
 		<img src="/assets/world.svg" alt="world map" />
@@ -23,7 +23,7 @@
 	</div>
 </header>
 <main>
-	<div class="main-texts">
+	<div class="main-texts" id="main-texts">
 		<h2><span>Open Source</span> is the way we make Impact</h2>
 		<p>
 			We are a community of open source developers, from across the world. We Chat, Learn, Share,
@@ -67,12 +67,6 @@
 </main>
 
 <style>
-	:root {
-		--titleFontSize: 2rem;
-		--secondTitleFontSize: 1.5rem;
-		--buttonFontSize: 1.2rem;
-		--normalFontSize: 1rem;
-	}
 	* {
 		font-size: var(--normalFontSize);
 	}
@@ -83,7 +77,7 @@
 	h1 {
 		font-size: var(--titleFontSize);
 		font-weight: bold;
-		margin-top: 6rem;
+		margin-top: 3rem;
 		margin-inline: 0.2rem;
 	}
 	.header-description {
