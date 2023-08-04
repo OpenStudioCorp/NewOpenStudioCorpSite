@@ -1,211 +1,185 @@
 <script lang="ts">
-    
-    import { onMount } from "svelte"
-    import Card from "../../components/Shared/Card/Card.svelte"
+	import { onMount } from 'svelte';
+	import Card from '../../components/Shared/Card/Card.svelte';
 
+	// TODO:
+	// Projects loading
+	const TEST = true;
+	let HASHTAGS_IN_PROGRESS_BAR = 30;
+	const MAX_QUERY_LENGTH = 30;
 
-    // TODO:
-    // Projects loading
+	// [0-1]
+	let loadingProgress = 0;
+	let searchQuery: string;
 
-    const TEST = true;
-    const HASHTAGS_IN_PROGRESS_BAR = 35;
-    const MAX_QUERY_LENGTH = 30;
+	$: hashesToFill = Math.floor(loadingProgress * HASHTAGS_IN_PROGRESS_BAR);
 
-    // [0-1]
-    let loadingProgress = 0;
-    let searchQuery: string;
-    
-    $: hashesToFill = Math.floor(loadingProgress * HASHTAGS_IN_PROGRESS_BAR);
+	$: if (searchQuery != undefined) {
+		// ensures triggering on variable change
+		let trimmedQuery = searchQuery.trim();
+		if (trimmedQuery.length > MAX_QUERY_LENGTH) {
+			trimmedQuery = trimmedQuery.substring(0, 30);
+		}
 
-    $: if (searchQuery != undefined) { // ensures triggering on variable change
-        let trimmedQuery = searchQuery.trim();
-        if (trimmedQuery.length > MAX_QUERY_LENGTH) {
-            trimmedQuery = trimmedQuery.substring(0, 30);
-        }
+		console.log('searching for: ', trimmedQuery);
+	}
 
-        console.log("searching for: ", trimmedQuery);
-    }
+	if (TEST) {
+		const t = () => {
+			if (loadingProgress >= 1) {
+				clearInterval(this);
+				return;
+			}
 
-    if (TEST) {
-    
-        const t = () => {
-            if (loadingProgress >= 1) {
-                clearInterval(this);
-                return;
-            }
+			loadingProgress += 1 / HASHTAGS_IN_PROGRESS_BAR;
+		};
 
-            loadingProgress += 1/HASHTAGS_IN_PROGRESS_BAR;
-        }
-
-        onMount(() => {
-            setInterval(t, 1000);
-        });
-
-    }
-
+		onMount(() => {
+			setInterval(t, 1000);
+		});
+	}
 </script>
 
 <main>
+	<div class="projects-load-label">
+		<p><span class="red-text">$</span> projects load --all</p>
+		<p>
+			|__ waiting for your contribution
+			{Math.round(loadingProgress * 100)}%
+		</p>
+	</div>
 
-    <div class="projects-load-label">
-        <p><span class="red-text">$</span> projects load --all</p>
-        <p>
-            |__ waiting for your contribution
-            {Math.round(loadingProgress * 100)}%
-        </p>
-    </div>
+	<div class="projects-load-bar">
+		<p>
+			[
+			<span class="red-text">
+				{#each Array(hashesToFill) as _}#{/each}
+			</span>
+			<span class="invisible-text">
+				{#each Array(HASHTAGS_IN_PROGRESS_BAR - hashesToFill) as _}#{/each}
+			</span>
+			]
+		</p>
+	</div>
+	<div class="searchbox-container">
+		<div class="search">
+			<img src="./assets/MiSearch.svg" alt="" />
+			<input type="text" placeholder="Search..." bind:value={searchQuery} />
+		</div>
+	</div>
+	<div class="projects-list">
+		<Card
+			cardData={{
+				image: '',
+				title: 'Project one',
+				link: '',
+				size: 'big',
+				description: 'tralala'
+			}}
+		/>
 
-    <div class="projects-load-bar">
-        [
-        <span class="red-text">
-            {#each Array(hashesToFill) as _}#{/each}
-        </span>
-        <span class="invisible-text">
-            {#each Array(HASHTAGS_IN_PROGRESS_BAR - hashesToFill) as _}#{/each}
-        </span>
-        ]
-    </div>
+		<Card
+			cardData={{
+				image: '',
+				title: 'Project two',
+				link: '',
+				size: 'big',
+				description: 'tralala'
+			}}
+		/>
 
-    <div class="search">
-        <img src="./assets/MiSearch.svg" alt="" />
-        <input
-            type="text"
-            placeholder="Search..."
-            bind:value={searchQuery}
-        />
-    </div>
-
-    <div class="projects-list">
-
-        <Card
-            cardData={{
-                image: "",
-                title: "Project one",
-                link: "",
-                size: 'big',
-                description: "tralala"
-            }}
-        />
-
-        <Card
-            cardData={{
-                image: "",
-                title: "Project two",
-                link: "",
-                size: 'big',
-                description: "tralala"
-            }}
-        />
-
-        <Card
-            cardData={{
-                image: "",
-                title: "Project three",
-                link: "",
-                size: 'big',
-                description: "tralala"
-            }}
-        />
-
-    </div>
-
+		<Card
+			cardData={{
+				image: '',
+				title: 'Project three',
+				link: '',
+				size: 'big',
+				description: 'tralala'
+			}}
+		/>
+	</div>
 </main>
 
 <style>
+	* {
+		font-size: var(--normalFontSize);
+	}
+	main {
+		margin-top: 3rem;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+	.red-text {
+		color: var(--red);
+	}
 
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-
-        --full-width: calc(100% - 2 * var(--horizontal-margin));
-    }
-
-    .red-text {
-        color: var(--red);
-    }
-
-    .invisible-text {
-        color: transparent;
-    }
-    
-    .projects-load-label {
-        width: var(--full-width);
-        margin: calc(var(--vertical-margin) + 4em) var(--horizontal-margin) var(--vertical-margin) var(--horizontal-margin);
-        text-align: left;
-    }
-    
-    .projects-load-bar {
-        margin: var(--vertical-margin) var(--horizontal-margin) var(--vertical-margin) var(--horizontal-margin);
-        white-space: nowrap;
-    }
-
-    .search {
-        display: flex;
-        width: var(--full-width);
-        margin: var(--vertical-margin) var(--horizontal-margin) var(--vertical-margin) var(--horizontal-margin);
-        border-bottom: 1px solid var(--lightGray);
-    }
-
-    .search > img {
-        width: 1em;
-        filter: grayscale(1) invert(1) brightness(0.5);
-        -webkit-filter: grayscale(1) invert(1) brightness(0.5);
-    }
-
-    .search > input {
-        width: 100%;
-        background-color: transparent;
-        border: none;
-        color: white;
-    }
-
-    .projects-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: var(--card-gap);
-        width: var(--full-width);
-        padding-bottom: calc(2 * var(--vertical-margin));
-        margin: var(--vertical-margin) var(--horizontal-margin) var(--vertical-margin) var(--horizontal-margin);
-    }
-
-    @media screen and (min-width: 320px) {
-        main {
-            font-size: 12px;
-            --horizontal-margin: 2em;
-            --vertical-margin: 4em;
-            --card-gap: 2em;
-        }
-    }
-
-    @media screen and (min-width: 640px) {
-        main {
-            font-size: 24px;
-            --horizontal-margin: 5em;
-            --vertical-margin: 5em;
-            --card-gap: 4em;
-        }
-    }
-
-    @media screen and (min-width: 768px) {
-        main {
-            font-size: 32px;
-            --horizontal-margin: 4em;
-            --vertical-margin: 5em;
-            --card-gap: 5em;
-        }
-    }
-
-    @media screen and (min-width: 1024px) {
-        main {
-            font-size: 24px;
-            --horizontal-margin: 20em;
-            --vertical-margin: 3em;
-            --card-gap: 5em;
-        }
-    }
-    
+	.invisible-text {
+		color: transparent;
+	}
+	.projects-load-label {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		flex-wrap: wrap;
+	}
+	.projects-load-label * {
+		text-align: left;
+		font-size: var(--secondTitleFontSize);
+	}
+	.searchbox-container {
+		margin-block: 2rem;
+		display: flex;
+		justify-content: center;
+	}
+	.search {
+		display: flex;
+		border-bottom: 1px solid var(--lightGray);
+		width: 90%;
+		max-width: 800px;
+	}
+	.search img {
+		width: 1rem;
+	}
+	.search input {
+		width: 90%;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		color: var(--white);
+	}
+	.search input::placeholder {
+		color: var(--lightGray);
+	}
+	.projects-list {
+		padding-inline: 1rem;
+	}
+	.projects-list :global(.big) {
+		margin-block: 1rem;
+	}
+	@media screen and (min-width: 768px) {
+		.projects-load-bar *,
+		.projects-load-label * {
+			font-size: var(--titleFontSize);
+		}
+	}
+	@media screen and (min-width: 1024px) {
+		:root {
+			--titleFontSize: 2.5rem;
+			--normalFontSize: 1.1rem;
+		}
+		.searchbox-container {
+			margin-top: 4rem;
+		}
+		.projects-list :global(.big) {
+			margin-block: 1.5rem;
+		}
+	}
+	@media screen and (min-width: 1280px) {
+		:root {
+			--titleFontSize: 3rem;
+			--normalFontSize: 1.2rem;
+		}
+	}
 </style>

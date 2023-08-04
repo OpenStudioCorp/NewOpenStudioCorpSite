@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-
+	let screenWidth: number;
 	const toggleButtonState = () => {
 		navButtonActive = !navButtonActive;
 	};
 	let navButtonActive = false;
 </script>
 
+<svelte:window bind:innerWidth={screenWidth} />
 <nav>
-	{#if typeof window !== 'undefined' && window.innerWidth < 1024}
+	{#if screenWidth < 1024}
 		<a href="/">OpenStudio</a>
 		<button class:active-button={navButtonActive} on:click={toggleButtonState}>
 			<div />
@@ -35,7 +36,7 @@
 		</div>
 	{/if}
 
-	{#if typeof window !== 'undefined' && window.innerWidth >= 1024}
+	{#if screenWidth >= 1024}
 		<a href="/">OpenStudio</a>
 		<div class="nav-links">
 			<a href="/" class:active={$page.url.pathname === '/'}>Home</a>
@@ -106,7 +107,7 @@
 
 	.mobile-sidebar {
 		transition: all 0.3s;
-		position: absolute;
+		position: fixed;
 		inset: 0 0 0 100%;
 		background-color: var(--darkBlue);
 		display: flex;
