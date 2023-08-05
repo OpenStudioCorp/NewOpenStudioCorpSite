@@ -10,16 +10,15 @@
 <main>
 	<h2 class="question-text">Who are We?</h2>
 	<p class="answer-text">
-		we are a independent organisation that allows people to work with others on cool and amazing things!
+		We are an independent organisation that allows people to find teammates for working on cool and amazing things!
 	</p>
-	<h2 class="question-text">What are we doing?</h2>
+	<h2 class="question-text">What do we do?</h2>
 	<p class="answer-text">
-		we make games, music software and apps for people to use to allow them to make or do anything.
+		We make all kinds of open-source software. Games, apps, websites... whatever you can imagine!
 	</p>
 	<h2 class="question-text">Why did we start this?</h2>
 	<p class="answer-text">
-		we wanted to make a place where people can freely share and work with others on projects that 
-seem cool/amazing!
+		We wanted to create a place where people can freely bring their project ideas to life without having to work by themselves! Communication is the key to learning!
 	</p>
 	<h2 class="dev-section-title"><span>{'<'}</span>Meet our devs<span>{'/>'}</span></h2>
 </main>
