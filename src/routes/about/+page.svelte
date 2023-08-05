@@ -10,15 +10,16 @@
 <main>
 	<h2 class="question-text">Who are We?</h2>
 	<p class="answer-text">
-		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum quaerat voluptatibus
+		we are a independent organisation that allows people to work with others on cool and amazing things!
 	</p>
 	<h2 class="question-text">What are we doing?</h2>
 	<p class="answer-text">
-		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum quaerat voluptatibus
+		we make games, music software and apps for people to use to allow them to make or do anything.
 	</p>
 	<h2 class="question-text">Why did we start this?</h2>
 	<p class="answer-text">
-		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum quaerat voluptatibus
+		we wanted to make a place where people can freely share and work with others on projects that 
+seem cool/amazing!
 	</p>
 	<h2 class="dev-section-title"><span>{'<'}</span>Meet our devs<span>{'/>'}</span></h2>
 </main>
