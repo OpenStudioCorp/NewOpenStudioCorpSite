@@ -5,7 +5,7 @@
 	// TODO:
 	// Projects loading
 	const TEST = true;
-	let HASHTAGS_IN_PROGRESS_BAR = 30;
+	const HASHTAGS_IN_PROGRESS_BAR = 30;
 	const MAX_QUERY_LENGTH = 30;
 
 	// [0-1]
