@@ -4,6 +4,7 @@
 	--lightGray: #c0bbcf;
 	--red: #ff1c56;
 	--darkBlue: #221b37;
+	--midnightBlue: #160d32;
 
 	--titleFontSize: 2rem;
 	--secondTitleFontSize: 1.5rem;
@@ -20,6 +21,24 @@ body {
 	color: white;
 	text-align: center;
 	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+	width: 10px;
+	background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.animation {
+	transition: all 0.3s;
+}
+.animation:hover {
+	transform: scale(1.05);
+}
+.animation:active {
+	transform: scale(0.95);
 }
 
 /* preflight css style */

@@ -2,6 +2,9 @@
 	import Card from '../components/Shared/Card/Card.svelte';
 	import MapPin from '../components/MapPin/MapPin.svelte';
 	import locations from '$lib/locations';
+	const joinButtonClickHandler = () => {
+		window.open('https://discord.gg/7cFCB8qBkf', '_blank');
+	};
 </script>
 
 <header>
@@ -13,7 +16,7 @@
 	</p>
 
 	<div class="buttons">
-		<button>Join us</button>
+		<button class="animation" on:click={() => joinButtonClickHandler()}>Join us</button>
 		<a href="#main-texts">Explore more</a>
 	</div>
 
@@ -65,12 +68,11 @@
 				}}
 			/>
 		</div>
-		<button class="viewAll-button">View All</button>
+		<button class="viewAll-button animation">View All</button>
 	</div>
 </main>
 
 <style>
-
 	* {
 		font-size: var(--normalFontSize);
 	}
@@ -106,12 +108,14 @@
 		font-weight: bold;
 		font-size: var(--buttonFontSize);
 	}
-
 	.buttons a {
 		font-size: var(--buttonFontSize);
+		transition: all 0.3s;
 		text-decoration: underline;
 	}
-
+	.buttons a:hover {
+		text-decoration-color: var(--red);
+	}
 	.image-container {
 		display: none;
 	}
@@ -153,9 +157,12 @@
 	.main-texts a {
 		color: var(--red);
 		text-decoration: underline;
+		transition: all 0.3s;
 		font-size: var(--buttonFontSize);
 	}
-
+	.main-texts a:hover {
+		text-decoration-color: var(--white);
+	}
 	.projects-cards {
 		display: flex;
 		flex-direction: column;
@@ -172,7 +179,9 @@
 		margin-bottom: 1rem;
 		font-size: var(--buttonFontSize);
 	}
-
+	.viewAll-button:hover {
+		background-color: var(--red);
+	}
 	@media screen and (min-width: 640px) {
 		:root {
 			--titleFontSize: 2.2rem;
@@ -200,7 +209,7 @@
 			gap: 3rem;
 		}
 	}
-	
+
 	@media screen and (min-width: 1280px) {
 		:root {
 			--titleFontSize: 3rem;
@@ -212,5 +221,4 @@
 			gap: 5rem;
 		}
 	}
-
 </style>
