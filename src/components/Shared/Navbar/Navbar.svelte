@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Gradient from '../Gradient/Gradient.svelte';
 	import { page } from '$app/stores';
 	let screenWidth: number;
 	const toggleButtonState = () => {
@@ -10,46 +11,57 @@
 <svelte:window bind:innerWidth={screenWidth} />
 <nav>
 	{#if screenWidth < 1024}
-		<a href="/">OpenStudio</a>
+		<a href="/" class="logo">OpenStudio</a>
 		<button class:active-button={navButtonActive} on:click={toggleButtonState}>
 			<div />
 			<div />
 			<div />
 		</button>
 		<div class="mobile-sidebar" class:mobile-sidebar-visible={navButtonActive}>
-			<a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
+			<a href="https://discord.gg/7cFCB8qBkf" class="join-button animation">Join us</a>
 			<a
 				href="/"
 				class:active={$page.url.pathname === '/'}
+				class="animation"
 				on:click={() => (navButtonActive = false)}>Home</a
 			>
 			<a
 				href="/about"
 				class:active={$page.url.pathname === '/about'}
+				class="animation"
 				on:click={() => (navButtonActive = false)}>About</a
 			>
 			<a
 				href="/projects"
 				class:active={$page.url.pathname === '/projects'}
+				class="animation"
 				on:click={() => (navButtonActive = false)}>Project</a
 			>
 		</div>
 	{/if}
 
 	{#if screenWidth >= 1024}
-		<a href="/">OpenStudio</a>
+		<Gradient
+			position={`${
+				$page.url.pathname === '/' ? 'left' : $page.url.pathname === '/about' ? 'center' : 'right'
+			}`}
+		/>
+		<a href="/" class="logo">OpenStudio</a>
 		<div class="nav-links">
-			<a href="/" class:active={$page.url.pathname === '/'}>Home</a>
-			<a href="/about" class:active={$page.url.pathname === '/about'}>About</a>
-			<a href="/projects" class:active={$page.url.pathname === '/projects'}>Project</a>
+			<a href="/" class:active={$page.url.pathname === '/'} class="animation">Home</a>
+			<a href="/about" class:active={$page.url.pathname === '/about'} class="animation">About</a>
+			<a href="/projects" class:active={$page.url.pathname === '/projects'} class="animation"
+				>Project</a
+			>
 		</div>
-		<a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
+		<a href="https://discord.gg/7cFCB8qBkf" class="join-button animation">Join us</a>
 	{/if}
 </nav>
 
 <style>
 	nav {
 		display: flex;
+		position: relative;
 		justify-content: space-between;
 		align-items: center;
 		padding-inline: 1.5rem;
@@ -62,11 +74,16 @@
 		display: flex;
 		width: 30%;
 		justify-content: space-around;
+		z-index: 20;
 	}
-
+	.logo {
+		color: var(--white);
+		z-index: 20;
+		font-size: 1.4rem;
+	}
 	button {
 		position: relative;
-		z-index: 4;
+		z-index: 40;
 		width: 30px;
 		height: 21px;
 	}
@@ -115,7 +132,7 @@
 		justify-content: space-evenly;
 		align-items: center;
 		overflow-x: hidden;
-		z-index: 3;
+		z-index: 30;
 	}
 
 	.mobile-sidebar-visible {
@@ -125,11 +142,16 @@
 	.join-button {
 		background-color: var(--white);
 		color: var(--darkBlue);
+		border: solid 2px var(--white);
 		width: fit-content;
 		border-radius: 10px;
-		padding: 0.2rem 2rem;
+		padding: 0.1rem 2rem;
+		z-index: 20;
 	}
-
+	.join-button:hover {
+		background-color: transparent;
+		color: var(--white);
+	}
 	a {
 		color: var(--lightGray);
 	}
@@ -137,5 +159,8 @@
 	.active {
 		color: var(--white);
 		text-decoration: underline;
+	}
+	.active:hover {
+		text-decoration-color: var(--red);
 	}
 </style>
