@@ -37,6 +37,12 @@
 				class="animation"
 				on:click={() => (navButtonActive = false)}>Project</a
 			>
+			<a
+				href="/team"
+				class:active={$page.url.pathname === '/team'}
+				class="animation"
+				on:click={() => (navButtonActive = false)}>Meet our team</a
+			>
 		</div>
 	{/if}
 
@@ -50,6 +56,7 @@
 		<div class="nav-links">
 			<a href="/" class:active={$page.url.pathname === '/'} class="animation">Home</a>
 			<a href="/about" class:active={$page.url.pathname === '/about'} class="animation">About</a>
+			<a href="/team" class:active={$page.url.pathname === '/team'} class="animation">Team</a>
 			<a href="/projects" class:active={$page.url.pathname === '/projects'} class="animation"
 				>Project</a
 			>
