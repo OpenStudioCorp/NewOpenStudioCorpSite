@@ -71,6 +71,24 @@
 		<Card
 			cardData={{
 				image: '',
+				title: 'OpenStudioIDE',
+				link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
+				size: 'big',
+				description: 'a built in-house IDE for OpenStudio'
+			}}
+		/>
+		<Card
+			cardData={{
+				image: '',
+				title: 'OpenStudioLauncher+',
+				link: 'https://github.com/OpenStudioCorp/OpenStudioLauncher',
+				size: 'big',
+				description: 'a launcher for games/projects '
+			}}
+		/>
+		<Card
+			cardData={{
+				image: '',
 				title: 'Project one',
 				link: '',
 				size: 'big',
