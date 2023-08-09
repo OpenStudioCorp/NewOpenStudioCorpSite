@@ -102,10 +102,19 @@
         <Card
 			cardData={{
 				image: '',
-				title: 'Project three',
+				title: 'Syembol',
 				link: '',
 				size: 'big',
-				description: 'tralala'
+				description: 'pizza time'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'Samuel Venable',
+				link: '',
+				size: 'big',
+				description: 'C++ is better then python'
 			}}
 		/>
         <Card
@@ -120,84 +129,49 @@
         <Card
 			cardData={{
 				image: '',
-				title: 'Project three',
+				title: 'TheBugCoder',
 				link: '',
 				size: 'big',
-				description: 'tralala'
+				description: 'gotta work till there aint no bugs anymore'
 			}}
 		/>
         <Card
 			cardData={{
 				image: '',
-				title: 'Project three',
+				title: 'erni',
 				link: '',
 				size: 'big',
-				description: 'tralala'
+				description: 'music is cool'
 			}}
 		/>
         <Card
 			cardData={{
 				image: '',
-				title: 'Project three',
+				title: 'AlanVR',
 				link: '',
 				size: 'big',
-				description: 'tralala'
+				description: 'i save with Pilk'
 			}}
 		/>
         <Card
 			cardData={{
 				image: '',
-				title: 'Project three',
+				title: 'Beatzoid',
 				link: '',
 				size: 'big',
-				description: 'tralala'
+				description: 'yeah'
 			}}
 		/>
         <Card
 			cardData={{
 				image: '',
-				title: 'Project three',
+				title: 'KiyoKiyotaka',
 				link: '',
 				size: 'big',
-				description: 'tralala'
+				description: 'i agree?'
 			}}
 		/>
-        <Card
-			cardData={{
-				image: '',
-				title: 'Project three',
-				link: '',
-				size: 'big',
-				description: 'tralala'
-			}}
-		/>
-        <Card
-			cardData={{
-				image: '',
-				title: 'Project three',
-				link: '',
-				size: 'big',
-				description: 'tralala'
-			}}
-		/>
-        <Card
-			cardData={{
-				image: '',
-				title: 'Project three',
-				link: '',
-				size: 'big',
-				description: 'tralala'
-			}}
-		/>
-        <Card
-			cardData={{
-				image: '',
-				title: 'Project three',
-				link: '',
-				size: 'big',
-				description: 'tralala'
-			}}
-		/>
+        
 	</div>
 </main>
 
