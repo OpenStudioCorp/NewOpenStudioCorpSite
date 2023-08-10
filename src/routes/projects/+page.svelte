@@ -80,7 +80,7 @@
 		<Card
 			cardData={{
 				image: '',
-				title: 'OpenStudioLauncher+',
+				title: 'OpenStudioLauncher',
 				link: 'https://github.com/OpenStudioCorp/OpenStudioLauncher',
 				size: 'big',
 				description: 'a launcher for games/projects '
@@ -89,32 +89,24 @@
 		<Card
 			cardData={{
 				image: '',
-				title: 'Project one',
-				link: '',
+				title: 'PythonicOS',
+				link: 'https://github.com/OpenStudioCorp/PythonicOS',
 				size: 'big',
-				description: 'tralala'
+				description: 'a OpenSource Display/desktop manager for linux'
 			}}
 		/>
 
 		<Card
 			cardData={{
 				image: '',
-				title: 'Project two',
-				link: '',
+				title: 'Pyton',
+				link: 'https://github.com/OpenStudioCorp/Pyton',
 				size: 'big',
-				description: 'tralala'
+				description: 'the official Pyton Package manager'
 			}}
 		/>
 
-		<Card
-			cardData={{
-				image: '',
-				title: 'Project three',
-				link: '',
-				size: 'big',
-				description: 'tralala'
-			}}
-		/>
+		
 	</div>
 </main>
 
