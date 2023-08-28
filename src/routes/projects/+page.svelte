@@ -22,7 +22,6 @@
 		}
 
 		console.log('searching for: ', trimmedQuery);
-		searchCards(trimmedQuery);
 	}
 
 	if (TEST) {
@@ -40,24 +39,29 @@
 		});
 	}
 
+
+
 	const cards = document.querySelectorAll('card');
-
-	function searchCards(searchQuery: string) {
-		cards.forEach(card => {
-			const titleEl = card.querySelector('.title');
-			const title = titleEl ? titleEl.textContent?.toLowerCase() : '';
-			if (title && title.includes(searchQuery)) {
-				if (card instanceof HTMLElement) {
-					card.style.display = 'block';
-				}
-			} else {
-				(card as HTMLElement).style.display = 'none';
-			}
-		});
+	const searchInput = document.querySelector('input[type="text"]');
+  
+	function searchCards() {
+	  const searchInput = document.querySelector('input[type="text"]') as HTMLInputElement;
+	  const searchQuery = searchInput?.value.toLowerCase();
+	  cards.forEach(card => {
+		const titleEl = card.querySelector('.title');
+		const title = titleEl ? titleEl.textContent?.toLowerCase() : '';
+		if (title && title.includes(searchQuery)) {
+		  if (card instanceof HTMLElement) {
+			card.style.display = 'block';
+		  }
+		} else {
+		  (card as HTMLElement).style.display = 'none';
+		}
+	  });
 	}
-</script>
-
-
+  
+	searchInput?.addEventListener('input', searchCards);
+  </script>
 <main>
 	<div class="projects-load-label">
 		<p><span class="red-text">$</span> projects load --all</p>
