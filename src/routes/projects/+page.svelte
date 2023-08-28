@@ -14,11 +14,6 @@
 
 	$: hashesToFill = Math.floor(loadingProgress * HASHTAGS_IN_PROGRESS_BAR);
 
-	function handleSearchInput(event: InputEvent) {
-		const target = event.target as HTMLInputElement;
-		searchQuery = target.value.trim();
-	}
-
 	$: if (searchQuery != undefined) {
 		// ensures triggering on variable change
 		let trimmedQuery = searchQuery.trim();
@@ -62,12 +57,8 @@
 	}
 </script>
 
+
 <main>
-
-
-
-
-
 	<div class="projects-load-label">
 		<p><span class="red-text">$</span> projects load --all</p>
 		<p>
