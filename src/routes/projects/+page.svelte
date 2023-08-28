@@ -20,10 +20,10 @@
 		searchQuery = searchQuery.substring(0, MAX_QUERY_LENGTH);
 	}
 
-	const testProjectTitleBySearchQuery = (projectTitle: string, query: string): boolean => {
-		const regex = new RegExp(`[\\s\\w]*(?:${query})[\\s\\w]*`, 'g');
+	const testProjectTitleBySearchQuery = (projectTitle: string, query: string): boolean => { // is this the search function? if so can you make it so that it searches without caps -charlie
+		const regex = new RegExp(`[\\s\\w]*(?:${query})[\\s\\w]*`, 'g');// like if i search "OpenStudio" it will show up if it's "openstudio" or "openStudio" or "Openstudio" or "openSTUDIO" or "OPENSTUDIO" or "oPeNsTuDiO" -charlie
 
-		return regex.test(projectTitle);
+		return regex.test(projectTitle);// ITS CASE INSENSATIVE there we go, forgot the word -charlie
 	}
 
 	if (TEST) {
