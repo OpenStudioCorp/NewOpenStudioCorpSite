@@ -105,6 +105,33 @@
 				description: 'the official Pyton Package manager'
 			}}
 		/>
+		<Card
+			cardData={{
+				image: '',
+				title: 'OpenStudioIDE',
+				link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
+				size: 'big',
+				description: 'the official OpenStudio C# IDE'
+			}}
+		/>
+		<Card
+			cardData={{
+				image: '',
+				title: 'OpenStudioPYIDE',
+				link: 'https://github.com/charlie-sans/OpenStudioPYIDE',
+				size: 'big',
+				description: 'the official OpenStudioPython IDE'
+			}}
+		/>
+		<Card
+			cardData={{
+				image: '',
+				title: 'Pyton',
+				link: 'https://github.com/OpenStudioCorp/Pyton',
+				size: 'big',
+				description: 'the official Pyton Package manager'
+			}}
+		/>
 
 		
 	</div>
