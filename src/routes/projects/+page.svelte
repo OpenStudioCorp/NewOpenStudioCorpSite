@@ -1,6 +1,8 @@
 <script lang="ts">
+
 	import { onMount } from 'svelte';
 	import Card from '../../components/Shared/Card/Card.svelte';
+	import { OPENSTUDIO_PROJECTS } from '$lib/project';
 
 	// TODO:
 	// Projects loading
@@ -14,14 +16,14 @@
 
 	$: hashesToFill = Math.floor(loadingProgress * HASHTAGS_IN_PROGRESS_BAR);
 
-	$: if (searchQuery != undefined) {
-		// ensures triggering on variable change
-		let trimmedQuery = searchQuery.trim();
-		if (trimmedQuery.length > MAX_QUERY_LENGTH) {
-			trimmedQuery = trimmedQuery.substring(0, 30);
-		}
+	$: if (searchQuery !== undefined && searchQuery.length > MAX_QUERY_LENGTH) {
+		searchQuery = searchQuery.substring(0, MAX_QUERY_LENGTH);
+	}
 
-		console.log('searching for: ', trimmedQuery);
+	const testProjectTitleBySearchQuery = (projectTitle: string, query: string): boolean => {
+		const regex = new RegExp(`[\\s\\w]*(?:${query})[\\s\\w]*`, 'g');
+
+		return regex.test(projectTitle);
 	}
 
 	if (TEST) {
@@ -35,7 +37,7 @@
 		};
 
 		onMount(() => {
-			setInterval(t, 1000);
+			setInterval(t, 500);
 		});
 	}
 </script>
@@ -68,70 +70,24 @@
 		</div>
 	</div>
 	<div class="projects-list">
-		<Card
-			cardData={{
-				image: '',
-				title: 'OpenStudioIDE',
-				link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
-				size: 'big',
-				description: 'a built in-house IDE for OpenStudio'
-			}}
-		/>
-		<Card
-			cardData={{
-				image: '',
-				title: 'OpenStudioLauncher',
-				link: 'https://github.com/OpenStudioCorp/OpenStudioLauncher',
-				size: 'big',
-				description: 'a launcher for games/projects '
-			}}
-		/>
-		<Card
-			cardData={{
-				image: '',
-				title: 'PythonicOS',
-				link: 'https://github.com/OpenStudioCorp/PythonicOS',
-				size: 'big',
-				description: 'a OpenSource Display/desktop manager for linux'
-			}}
-		/>
+		
+		{#each OPENSTUDIO_PROJECTS as project}
+
+		{#if searchQuery === undefined || testProjectTitleBySearchQuery(project.title, searchQuery)}
 
 		<Card
 			cardData={{
-				image: '',
-				title: 'Pyton',
-				link: 'https://github.com/OpenStudioCorp/Pyton',
+				title: project.title,
+				link: project.link,
+				image: project.icon ?? "",
 				size: 'big',
-				description: 'the official Pyton Package manager'
+				description: project.description ?? ""
 			}}
 		/>
-		<Card
-			cardData={{
-				image: '',
-				title: 'OpenStudioIDE',
-				link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
-				size: 'big',
-				description: 'the official OpenStudio C# IDE'
-			}}
-		/>
-		<Card
-			cardData={{
-				image: '',
-				title: 'OpenStudioPYIDE',
-				link: 'https://github.com/charlie-sans/OpenStudioPYIDE',
-				size: 'big',
-				description: 'the official OpenStudioPython IDE'
-			}}
-		/>
-		<Card
-			cardData={{
-				image: '',
-				title: 'Pyton',
-				link: 'https://github.com/OpenStudioCorp/Pyton',
-				size: 'big',
-				description: 'the official Pyton Package manager'
-			}}
-		/>
+
+		{/if}
+
+		{/each}
 
 		
 	</div>
