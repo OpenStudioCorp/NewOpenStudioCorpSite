@@ -34,6 +34,7 @@
 		<p>
 			We are a community of open source developers, from across the world. We Chat, Learn, Share,
 			and Build with each other
+			<button>launch nuke</button>
 		</p>
 		<a href="#">Want to Join?</a>
 	</div>
