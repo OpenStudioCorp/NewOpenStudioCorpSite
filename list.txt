@@ -1,0 +1,50 @@
+OpenNoteBlockStudioVR https://github.com/OpenStudioCorp/OpenNoteBlockStudioVR
+charlie-sans https://github.com/charlie-sans
+Beatzoid https://github.com/Beatzoid
+Syembol https://github.com/Syembol
+
+Open-NBS-VR-FILES https://github.com/OpenStudioCorp/Open-NBS-VR-FILES
+charlie-sans https://github.com/charlie-sans
+
+.github https://github.com/OpenStudioCorp/.github
+charlie-sans https://github.com/charlie-sans
+
+OpenStudioCorp.github.io https://github.com/OpenStudioCorp/OpenStudioCorp.github.io
+charlie-sans https://github.com/charlie-sans
+
+PythonicOS https://github.com/OpenStudioCorp/PythonicOS
+charlie-sans https://github.com/charlie-sans
+h4rldev https://github.com/h4rldev
+ProSureString https://github.com/ProSureString
+
+PythonicOS-dev https://github.com/OpenStudioCorp/PythonicOS-dev
+charlie-sans https://github.com/charlie-sans
+h4rldev https://github.com/h4rldev
+
+Openstudio.github.io https://github.com/OpenStudioCorp/Openstudio.github.io
+charlie-sans https://github.com/charlie-sans
+
+PythonicOS-Devv https://github.com/OpenStudioCorp/PythonicOS-Devv
+charlie-sans https://github.com/charlie-sans
+ProSureString https://github.com/ProSureString
+
+Pyton https://github.com/OpenStudioCorp/Pyton
+charlie-sans https://github.com/charlie-sans
+
+NewOpenStudioCorpSite https://github.com/OpenStudioCorp/NewOpenStudioCorpSite
+Ex-ce-pt https://github.com/Ex-ce-pt
+charlie-sans https://github.com/charlie-sans
+sourena-kazemi https://github.com/sourena-kazemi
+
+OpenStudioDevelopment https://github.com/OpenStudioCorp/OpenStudioDevelopment
+charlie-sans https://github.com/charlie-sans
+
+OpenStudioLauncher https://github.com/OpenStudioCorp/OpenStudioLauncher
+charlie-sans https://github.com/charlie-sans
+
+OpenStudioIDE https://github.com/OpenStudioCorp/OpenStudioIDE
+charlie-sans https://github.com/charlie-sans
+
+Welcome-to-OpenStudio https://github.com/OpenStudioCorp/Welcome-to-OpenStudio
+charlie-sans https://github.com/charlie-sans
+shabman https://github.com/shabman
