@@ -70,7 +70,6 @@
 			/>
 		</div>
 		<button class="viewAll-button animation">View All</button>
-		<button class="viewAll-button animation">launch nuke</button>
 	</div>
 </main>
 
