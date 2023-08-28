@@ -1,10 +1,13 @@
 <script lang="ts">
+
 	import Card from '../components/Shared/Card/Card.svelte';
 	import MapPin from '../components/MapPin/MapPin.svelte';
 	import locations from '$lib/locations';
+
 	const joinButtonClickHandler = () => {
 		window.open('https://discord.gg/7cFCB8qBkf', '_blank');
 	};
+	
 </script>
 
 <header>
