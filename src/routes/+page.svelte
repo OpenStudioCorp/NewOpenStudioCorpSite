@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Card from '../components/Shared/Card/Card.svelte';
 	import MapPin from '../components/MapPin/MapPin.svelte';
+	import PageTransitions from '../components/Shared/PageTransitions/PageTransitions.svelte';
 	import locations from '$lib/locations';
 	const ButtonClickHandler = (link: string, target: '_blank' | '_self') => {
 		window.open(link, target);
@@ -8,74 +9,79 @@
 </script>
 
 <header>
-	<h1>
-		Let's Make <span class="colored-word">Changes</span> <br />Together, AnyWhere
-	</h1>
-	<p class="header-description">
-		open studio is a community for open source developers from all over the world
-	</p>
+	<PageTransitions>
+		<h1>
+			Let's Make <span class="colored-word">Changes</span> <br />Together, AnyWhere
+		</h1>
+		<p class="header-description">
+			open studio is a community for open source developers from all over the world
+		</p>
 
-	<div class="buttons">
-		<button
-			class="animation"
-			on:click={() => ButtonClickHandler('https://discord.gg/7cFCB8qBkf', '_blank')}>Join us</button
-		>
-		<a href="#main-texts">Explore more</a>
-	</div>
+		<div class="buttons">
+			<button
+				class="animation"
+				on:click={() => ButtonClickHandler('https://discord.gg/7cFCB8qBkf', '_blank')}
+				>Join us</button
+			>
+			<a href="#main-texts">Explore more</a>
+		</div>
 
-	<div class="image-container">
-		<img src="/assets/world.svg" alt="world map" />
-		{#each locations as location, index}
-			<MapPin top={location.top} left={location.left} delay={index * 100} />
-		{/each}
-	</div>
+		<div class="image-container">
+			<img src="/assets/world.svg" alt="world map" />
+			{#each locations as location, index}
+				<MapPin top={location.top} left={location.left} delay={index * 100} />
+			{/each}
+		</div>
+	</PageTransitions>
 </header>
 
 <main>
-	<div class="main-texts" id="main-texts">
-		<h2><span>Open Source</span> is the way we make Impact</h2>
-		<p>
-			We are a community of open source developers, from across the world. We Chat, Learn, Share,
-			and Build with each other
-		</p>
-		<a href="https://discord.gg/7cFCB8qBkf" target="_blank">Want to Join?</a>
-	</div>
-	<div class="projects">
-		<h2>What have we built?</h2>
-		<div class="projects-cards">
-			<Card
-				cardData={{
-					image: 'projectsLogos/noteblock.png',
-					title: 'NoteBlockStudioVR',
-					link: 'https://github.com/OpenStudioCorp/OpenNoteBlockStudioVR',
-					size: 'small',
-					alignment: 'top'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: 'projectsLogos/PythonicOS.png',
-					title: 'PythonicOS',
-					link: 'https://github.com/OpenStudioCorp/PythonicOS',
-					size: 'small',
-					alignment: 'bottom'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: 'projectsLogos/noteblock.png',
-					title: 'OpenStudioIDE',
-					link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
-					size: 'small',
-					alignment: 'middle'
-				}}
-			/>
+	<PageTransitions>
+		<div class="main-texts" id="main-texts">
+			<h2><span>Open Source</span> is the way we make Impact</h2>
+			<p>
+				We are a community of open source developers, from across the world. We Chat, Learn, Share,
+				and Build with each other
+			</p>
+			<a href="https://discord.gg/7cFCB8qBkf" target="_blank">Want to Join?</a>
 		</div>
-		<button
-			class="viewAll-button animation"
-			on:click={() => ButtonClickHandler('/projects', '_self')}>View All</button
-		>
-	</div>
+		<div class="projects">
+			<h2>What have we built?</h2>
+			<div class="projects-cards">
+				<Card
+					cardData={{
+						image: 'projectsLogos/noteblock.png',
+						title: 'NoteBlockStudioVR',
+						link: 'https://github.com/OpenStudioCorp/OpenNoteBlockStudioVR',
+						size: 'small',
+						alignment: 'top'
+					}}
+				/>
+				<Card
+					cardData={{
+						image: 'projectsLogos/PythonicOS.png',
+						title: 'PythonicOS',
+						link: 'https://github.com/OpenStudioCorp/PythonicOS',
+						size: 'small',
+						alignment: 'bottom'
+					}}
+				/>
+				<Card
+					cardData={{
+						image: 'projectsLogos/noteblock.png',
+						title: 'OpenStudioIDE',
+						link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
+						size: 'small',
+						alignment: 'middle'
+					}}
+				/>
+			</div>
+			<button
+				class="viewAll-button animation"
+				on:click={() => ButtonClickHandler('/projects', '_self')}>View All</button
+			>
+		</div>
+	</PageTransitions>
 </main>
 
 <style>

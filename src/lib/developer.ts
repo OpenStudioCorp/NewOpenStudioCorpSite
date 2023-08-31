@@ -43,6 +43,11 @@ const developers: Developer[] = [
 		name: 'shabman',
 		image: 'shabman.gif',
 		link: 'https://github.com/shabman'
+	},
+	{
+		name: 'Dunkin',
+		image: 'Dunkin.png',
+		link: 'https://github.com/DaviesOwonibi'
 	}
 ];
 export default developers;
