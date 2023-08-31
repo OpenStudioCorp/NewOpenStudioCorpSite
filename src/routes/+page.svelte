@@ -35,7 +35,7 @@
 			We are a community of open source developers, from across the world. We Chat, Learn, Share,
 			and Build with each other
 		</p>
-		<a href="#">Want to Join?</a>
+		<a href="https://discord.gg/7cFCB8qBkf" target="_blank">Want to Join?</a>
 	</div>
 	<div class="projects">
 		<h2>What have we built?</h2>
@@ -173,7 +173,7 @@
 	}
 
 	.viewAll-button {
-		border: 3px solid var(--red);
+		border: 3px solid var(--white);
 		padding-inline: 2rem;
 		padding-block: 0.2rem;
 		border-radius: 10px;
@@ -182,6 +182,7 @@
 	}
 	.viewAll-button:hover {
 		background-color: var(--red);
+		border-color: var(--red);
 	}
 	@media screen and (min-width: 640px) {
 		:root {

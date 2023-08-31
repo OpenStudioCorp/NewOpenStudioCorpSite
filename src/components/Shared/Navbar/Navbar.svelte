@@ -18,7 +18,9 @@
 			<div />
 		</button>
 		<div class="mobile-sidebar" class:mobile-sidebar-visible={navButtonActive}>
-			<a href="https://discord.gg/7cFCB8qBkf" class="join-button animation">Join us</a>
+			<a href="https://discord.gg/7cFCB8qBkf" target="_blank" class="join-button animation"
+				>Join us</a
+			>
 			<a
 				href="/"
 				class:active={$page.url.pathname === '/'}
@@ -54,7 +56,8 @@
 				>Project</a
 			>
 		</div>
-		<a href="https://discord.gg/7cFCB8qBkf" class="join-button animation">Join us</a>
+		<a href="https://discord.gg/7cFCB8qBkf" target="_blank" class="join-button animation">Join us</a
+		>
 	{/if}
 </nav>
 
@@ -86,23 +89,25 @@
 		z-index: 40;
 		width: 30px;
 		height: 21px;
+		margin-right: 1rem;
 	}
 
 	button > div {
-		width: 30px;
-		height: 2px;
+		width: 50px;
+		height: 4px;
+		border-radius: 20px;
 		background-color: var(--white);
-		bottom: 5px;
+		bottom: 0.5rem;
 		position: absolute;
 		transition: all 0.3s;
 	}
 
 	button > div:nth-of-type(2) {
-		bottom: 10px;
+		bottom: 1rem;
 	}
 
 	button > div:nth-of-type(3) {
-		bottom: 15px;
+		bottom: 1.5rem;
 	}
 
 	button.active-button > div {
