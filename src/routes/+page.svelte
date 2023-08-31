@@ -75,6 +75,7 @@
 <style>
 	* {
 		font-size: var(--normalFontSize);
+		z-index: 10;
 	}
 
 	.colored-word {

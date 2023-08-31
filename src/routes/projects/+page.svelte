@@ -103,6 +103,7 @@
 <style>
 	* {
 		font-size: var(--normalFontSize);
+		z-index: 10;
 	}
 	main {
 		margin-top: 3rem;
