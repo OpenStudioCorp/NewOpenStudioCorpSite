@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import Card from '../../components/Shared/Card/Card.svelte';
 	import projects from '$lib/project';
+	import PageTransitions from '../../components/Shared/PageTransitions/PageTransitions.svelte';
 
 	// TODO:
 	// Projects loading
@@ -42,45 +43,47 @@
 </script>
 
 <main>
-	<div class="projects-load-label">
-		<p><span class="red-text">$</span> projects load --all</p>
-		<p>
-			|__ waiting for your contribution
-			{Math.max(Math.min(Math.round(loadingProgress * 100), 100), 0)}%
-		</p>
-	</div>
-
-	<div class="projects-load-bar">
-		<p>
-			[
-			<span class="red-text">
-				{#each Array(hashesToFill) as _}#{/each}
-			</span>
-			<span class="invisible-text">
-				{#each Array(HASHTAGS_IN_PROGRESS_BAR - hashesToFill) as _}#{/each}
-			</span>
-			]
-		</p>
-	</div>
-	<div class="searchbox-container">
-		<div class="search">
-			<img src="./assets/MiSearch.svg" alt="" />
-			<input type="text" placeholder="Search..." bind:value={searchQuery} />
+	<PageTransitions>
+		<div class="projects-load-label">
+			<p><span class="red-text">$</span> projects load --all</p>
+			<p>
+				|__ waiting for your contribution
+				{Math.max(Math.min(Math.round(loadingProgress * 100), 100), 0)}%
+			</p>
 		</div>
-	</div>
-	<div class="projects-list">
-		{#each projects as project}
-			<Card
-				cardData={{
-					size: 'big',
-					title: project.title,
-					image: `projectsLogos/${project.image}`,
-					link: project.link,
-					description: project.description
-				}}
-			/>
-		{/each}
-	</div>
+
+		<div class="projects-load-bar">
+			<p>
+				[
+				<span class="red-text">
+					{#each Array(hashesToFill) as _}#{/each}
+				</span>
+				<span class="invisible-text">
+					{#each Array(HASHTAGS_IN_PROGRESS_BAR - hashesToFill) as _}#{/each}
+				</span>
+				]
+			</p>
+		</div>
+		<div class="searchbox-container">
+			<div class="search">
+				<img src="./assets/MiSearch.svg" alt="" />
+				<input type="text" placeholder="Search..." bind:value={searchQuery} />
+			</div>
+		</div>
+		<div class="projects-list">
+			{#each projects as project}
+				<Card
+					cardData={{
+						size: 'big',
+						title: project.title,
+						image: `projectsLogos/${project.image}`,
+						link: project.link,
+						description: project.description
+					}}
+				/>
+			{/each}
+		</div>
+	</PageTransitions>
 </main>
 
 <style>

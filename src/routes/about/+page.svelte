@@ -1,42 +1,47 @@
 <script lang="ts">
 	import developers from '$lib/developer';
 	import Card from '../../components/Shared/Card/Card.svelte';
+	import PageTransitions from '../../components/Shared/PageTransitions/PageTransitions.svelte';
 </script>
 
 <header>
-	<h1>
-		We Love Working Together <br /> We
-		<img src="/assets/IcOutlineFavorite.svg" alt="heart icon" class="title-icon" /> Working With You
-	</h1>
+	<PageTransitions>
+		<h1>
+			We Love Working Together <br /> We
+			<img src="/assets/IcOutlineFavorite.svg" alt="heart icon" class="title-icon" /> Working With You
+		</h1>
+	</PageTransitions>
 </header>
 <main>
-	<h2 class="question-text">Who are We?</h2>
-	<p class="answer-text">
-		We are an independent organisation that allows people to find teammates for working on cool and
-		amazing things!
-	</p>
-	<h2 class="question-text">What do we do?</h2>
-	<p class="answer-text">
-		We make all kinds of open-source software. Games, apps, websites... whatever you can imagine!
-	</p>
-	<h2 class="question-text">Why did we start this?</h2>
-	<p class="answer-text">
-		We wanted to create a place where people can freely bring their project ideas to life without
-		having to work by themselves! Communication is the key to learning!
-	</p>
-	<h2 class="dev-section-title"><span>{'<'}</span>Meet our devs<span>{'/>'}</span></h2>
-	<div class="developer-cards">
-		{#each developers as developer}
-			<Card
-				cardData={{
-					image: `developerProfiles/${developer.image}`,
-					title: developer.name,
-					link: developer.link,
-					size: 'small'
-				}}
-			/>
-		{/each}
-	</div>
+	<PageTransitions>
+		<h2 class="question-text">Who are We?</h2>
+		<p class="answer-text">
+			We are an independent organisation that allows people to find teammates for working on cool
+			and amazing things!
+		</p>
+		<h2 class="question-text">What do we do?</h2>
+		<p class="answer-text">
+			We make all kinds of open-source software. Games, apps, websites... whatever you can imagine!
+		</p>
+		<h2 class="question-text">Why did we start this?</h2>
+		<p class="answer-text">
+			We wanted to create a place where people can freely bring their project ideas to life without
+			having to work by themselves! Communication is the key to learning!
+		</p>
+		<h2 class="dev-section-title"><span>{'<'}</span>Meet our devs<span>{'/>'}</span></h2>
+		<div class="developer-cards">
+			{#each developers as developer}
+				<Card
+					cardData={{
+						image: `developerProfiles/${developer.image}`,
+						title: developer.name,
+						link: developer.link,
+						size: 'small'
+					}}
+				/>
+			{/each}
+		</div>
+	</PageTransitions>
 </main>
 
 <style>
