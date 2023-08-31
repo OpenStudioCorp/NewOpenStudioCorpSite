@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Card from '../../components/Shared/Card/Card.svelte';
+	import projects from '$lib/project';
 
 	// TODO:
 	// Projects loading
@@ -68,35 +69,17 @@
 		</div>
 	</div>
 	<div class="projects-list">
-		<Card
-			cardData={{
-				image: '',
-				title: 'Project one',
-				link: '',
-				size: 'big',
-				description: 'tralala'
-			}}
-		/>
-
-		<Card
-			cardData={{
-				image: '',
-				title: 'Project two',
-				link: '',
-				size: 'big',
-				description: 'tralala'
-			}}
-		/>
-
-		<Card
-			cardData={{
-				image: '',
-				title: 'Project three',
-				link: '',
-				size: 'big',
-				description: 'tralala'
-			}}
-		/>
+		{#each projects as project}
+			<Card
+				cardData={{
+					size: 'big',
+					title: project.title,
+					image: `projectsLogos/${project.image}`,
+					link: project.link,
+					description: project.description
+				}}
+			/>
+		{/each}
 	</div>
 </main>
 

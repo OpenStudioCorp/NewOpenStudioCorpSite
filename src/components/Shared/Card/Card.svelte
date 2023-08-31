@@ -89,6 +89,7 @@
 	}
 
 	.info-container p {
+		margin-top: 1rem;
 		color: var(--lightGray);
 	}
 
@@ -98,15 +99,15 @@
 		}
 
 		.big .info-container {
+			width: 70%;
 			text-align: left;
-			margin-left: 2rem;
 			align-self: flex-start;
+			margin-block: auto;
 		}
 
 		.big .image-container {
 			width: 200px;
 			height: 200px;
-			margin-left: 4rem;
 		}
 	}
 

@@ -45,7 +45,7 @@
 		<div class="projects-cards">
 			<Card
 				cardData={{
-					image: 'favicon.png',
+					image: 'projectsLogos/noteblock.png',
 					title: 'NoteBlockStudioVR',
 					link: 'https://github.com/OpenStudioCorp/OpenNoteBlockStudioVR',
 					size: 'small',
@@ -63,7 +63,7 @@
 			/>
 			<Card
 				cardData={{
-					image: 'favicon.png',
+					image: 'projectsLogos/noteblock.png',
 					title: 'OpenStudioIDE',
 					link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
 					size: 'small',
