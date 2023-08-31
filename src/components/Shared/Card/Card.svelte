@@ -19,7 +19,7 @@
 	</div>
 
 	<div class="info-container">
-		<a href={cardData.link} class="title">{cardData.title}</a>
+		<a href={cardData.link} target="_blank" class="title">{cardData.title}</a>
 		<p>{cardData.size === 'big' ? cardData.description : ''}</p>
 	</div>
 </div>
@@ -46,10 +46,14 @@
 		height: 150px;
 		overflow: hidden;
 		border-radius: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	img {
 		transition: all 0.3s;
+		width: 120px;
 	}
 
 	.title {

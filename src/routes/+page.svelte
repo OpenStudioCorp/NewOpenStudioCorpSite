@@ -2,8 +2,8 @@
 	import Card from '../components/Shared/Card/Card.svelte';
 	import MapPin from '../components/MapPin/MapPin.svelte';
 	import locations from '$lib/locations';
-	const joinButtonClickHandler = () => {
-		window.open('https://discord.gg/7cFCB8qBkf', '_blank');
+	const ButtonClickHandler = (link: string, target: '_blank' | '_self') => {
+		window.open(link, target);
 	};
 </script>
 
@@ -16,7 +16,10 @@
 	</p>
 
 	<div class="buttons">
-		<button class="animation" on:click={() => joinButtonClickHandler()}>Join us</button>
+		<button
+			class="animation"
+			on:click={() => ButtonClickHandler('https://discord.gg/7cFCB8qBkf', '_blank')}>Join us</button
+		>
 		<a href="#main-texts">Explore more</a>
 	</div>
 
@@ -42,33 +45,36 @@
 		<div class="projects-cards">
 			<Card
 				cardData={{
-					image: '',
-					title: 'Project 1',
-					link: '',
+					image: 'favicon.png',
+					title: 'NoteBlockStudioVR',
+					link: 'https://github.com/OpenStudioCorp/OpenNoteBlockStudioVR',
 					size: 'small',
 					alignment: 'top'
 				}}
 			/>
 			<Card
 				cardData={{
-					image: '',
-					title: 'Project 2',
-					link: '',
+					image: 'assets/PythonicOS.png',
+					title: 'PythonicOS',
+					link: 'https://github.com/OpenStudioCorp/PythonicOS',
 					size: 'small',
 					alignment: 'bottom'
 				}}
 			/>
 			<Card
 				cardData={{
-					image: '',
-					title: 'Project 3',
-					link: '',
+					image: 'favicon.png',
+					title: 'OpenStudioIDE',
+					link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
 					size: 'small',
 					alignment: 'middle'
 				}}
 			/>
 		</div>
-		<button class="viewAll-button animation">View All</button>
+		<button
+			class="viewAll-button animation"
+			on:click={() => ButtonClickHandler('/projects', '_self')}>View All</button
+		>
 	</div>
 </main>
 

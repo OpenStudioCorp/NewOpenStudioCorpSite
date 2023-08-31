@@ -15,8 +15,12 @@
 			<a href="projects" class="animation">Projects</a>
 		</div>
 		<div class="footer-images">
-			<img src="assets/discord-mark-white.svg" alt="discord" class="animation" />
-			<img src="assets/github.svg" alt="github" class="animation" />
+			<a href="'https://discord.gg/7cFCB8qBkf'">
+				<img src="assets/discord-mark-white.svg" alt="discord" class="animation" />
+			</a>
+			<a href="https://github.com/OpenStudioCorp">
+				<img src="assets/github.svg" alt="github" class="animation" />
+			</a>
 		</div>
 	</div>
 	<p>
