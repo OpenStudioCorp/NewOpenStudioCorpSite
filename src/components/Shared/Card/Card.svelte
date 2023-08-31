@@ -34,6 +34,8 @@
 		border-radius: 20px;
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 		transition: all 0.3s;
+		position: relative;
+		z-index: 10;
 	}
 
 	.small {
