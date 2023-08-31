@@ -1,0 +1,260 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import Card from '../../components/Shared/Card/Card.svelte';
+
+	// TODO:
+	// Projects loading
+	const TEST = true;
+	const HASHTAGS_IN_PROGRESS_BAR = 30;
+	const MAX_QUERY_LENGTH = 30;
+
+	// [0-1]
+	let loadingProgress = 0;
+	let searchQuery: string;
+
+	$: hashesToFill = Math.floor(loadingProgress * HASHTAGS_IN_PROGRESS_BAR);
+
+	$: if (searchQuery != undefined) {
+		// ensures triggering on variable change
+		let trimmedQuery = searchQuery.trim();
+		if (trimmedQuery.length > MAX_QUERY_LENGTH) {
+			trimmedQuery = trimmedQuery.substring(0, 30);
+		}
+
+		console.log('searching for: ', trimmedQuery);
+	}
+
+	if (TEST) {
+		const t = () => {
+			if (loadingProgress >= 1) {
+				clearInterval(this);
+				return;
+			}
+
+			loadingProgress += 1 / HASHTAGS_IN_PROGRESS_BAR;
+		};
+
+		onMount(() => {
+			setInterval(t, 1000);
+		});
+	}
+</script>
+
+<main>
+	
+	<div class="projects-list">
+		<Card
+			cardData={{
+				image: '',
+				title: 'charlie_san',
+				link: '',
+				size: 'big',
+				description: 'just a house cat dammit'
+			}}
+		/>
+
+		<Card
+			cardData={{
+				image: '',
+				title: 'souriena',
+				link: '',
+				size: 'big',
+				description: 'Charlieeeee you cant copy that much html'
+			}}
+		/>
+
+		<Card
+			cardData={{
+				image: '',
+				title: 'Except',
+				link: '',
+				size: 'big',
+				description: 'just dont die ¯\_(ツ)_/¯'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'DieDerick87',
+				link: '',
+				size: 'big',
+				description: 'Gday mate! how are ya'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'ProSureString',
+				link: '',
+				size: 'big',
+				description: 'just keep smiling even tho they look like a bomb'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'a750',
+				link: '',
+				size: 'big',
+				description: 'just an intel GPU'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'Syembol',
+				link: '',
+				size: 'big',
+				description: 'pizza time'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'Samuel Venable',
+				link: '',
+				size: 'big',
+				description: 'C++ is better then python'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'Project three',
+				link: '',
+				size: 'big',
+				description: 'tralala'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'TheBugCoder',
+				link: '',
+				size: 'big',
+				description: 'gotta work till there aint no bugs anymore'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'erni',
+				link: '',
+				size: 'big',
+				description: 'music is cool'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'AlanVR',
+				link: '',
+				size: 'big',
+				description: 'i save with Pilk'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'Beatzoid',
+				link: '',
+				size: 'big',
+				description: 'yeah'
+			}}
+		/>
+        <Card
+			cardData={{
+				image: '',
+				title: 'KiyoKiyotaka',
+				link: '',
+				size: 'big',
+				description: 'i agree?'
+			}}
+		/>
+        
+	</div>
+</main>
+
+<style>
+	* {
+		font-size: var(--normalFontSize);
+	}
+	main {
+		margin-top: 3rem;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+	.red-text {
+		color: var(--red);
+	}
+
+	.invisible-text {
+		color: transparent;
+	}
+	.projects-load-label {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		flex-wrap: wrap;
+	}
+	.projects-load-label * {
+		text-align: left;
+		font-size: var(--secondTitleFontSize);
+	}
+	.searchbox-container {
+		margin-block: 2rem;
+		display: flex;
+		justify-content: center;
+	}
+	.search {
+		display: flex;
+		border-bottom: 1px solid var(--lightGray);
+		width: 90%;
+		max-width: 800px;
+	}
+	.search img {
+		width: 1rem;
+	}
+	.search input {
+		width: 90%;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		color: var(--white);
+	}
+	.search input::placeholder {
+		color: var(--lightGray);
+	}
+	.projects-list {
+		padding-inline: 1rem;
+	}
+	.projects-list :global(.big) {
+		margin-block: 1rem;
+	}
+	@media screen and (min-width: 768px) {
+		.projects-load-bar *,
+		.projects-load-label * {
+			font-size: var(--titleFontSize);
+		}
+	}
+	@media screen and (min-width: 1024px) {
+		:root {
+			--titleFontSize: 2.5rem;
+			--normalFontSize: 1.1rem;
+		}
+		.searchbox-container {
+			margin-top: 4rem;
+		}
+		.projects-list :global(.big) {
+			margin-block: 1.5rem;
+		}
+	}
+	@media screen and (min-width: 1280px) {
+		:root {
+			--titleFontSize: 3rem;
+			--normalFontSize: 1.2rem;
+		}
+	}
+</style>
