@@ -1,4 +1,6 @@
 <script lang="ts">
+	import developers from '$lib/developer';
+	import Card from '../../components/Shared/Card/Card.svelte';
 </script>
 
 <header>
@@ -23,6 +25,18 @@
 		having to work by themselves! Communication is the key to learning!
 	</p>
 	<h2 class="dev-section-title"><span>{'<'}</span>Meet our devs<span>{'/>'}</span></h2>
+	<div class="developer-cards">
+		{#each developers as developer}
+			<Card
+				cardData={{
+					image: `developerProfiles/${developer.image}`,
+					title: developer.name,
+					link: developer.link,
+					size: 'small'
+				}}
+			/>
+		{/each}
+	</div>
 </main>
 
 <style>
@@ -60,6 +74,14 @@
 		color: var(--red);
 		margin-inline: 10px;
 	}
+	.developer-cards {
+		margin-top: 3rem;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+	}
 	@media screen and (min-width: 640px) {
 		:root {
 			--titleFontSize: 2.2rem;
@@ -77,6 +99,12 @@
 		:root {
 			--titleFontSize: 3rem;
 			--normalFontSize: 1.2rem;
+		}
+		.developer-cards {
+			row-gap: 3rem;
+			column-gap: 6rem;
+			max-width: 50%;
+			margin-inline: auto;
 		}
 	}
 </style>

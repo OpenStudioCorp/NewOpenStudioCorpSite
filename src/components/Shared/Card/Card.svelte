@@ -13,13 +13,17 @@
 	export let cardData: Props;
 </script>
 
-<div class={`${cardData.size} card ${cardData.size === 'small' ? cardData.alignment : ''}`}>
+<div
+	class={`${cardData.size} card ${
+		cardData.size === 'small' && cardData.alignment ? cardData.alignment : ''
+	}`}
+>
 	<div class="image-container">
 		<img src={cardData.image} alt={cardData.title} />
 	</div>
 
 	<div class="info-container">
-		<a href={cardData.link} class="title">{cardData.title}</a>
+		<a href={cardData.link} target="_blank" class="title">{cardData.title}</a>
 		<p>{cardData.size === 'big' ? cardData.description : ''}</p>
 	</div>
 </div>
@@ -46,10 +50,15 @@
 		height: 150px;
 		overflow: hidden;
 		border-radius: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	img {
 		transition: all 0.3s;
+		border-radius: 20px;
+		width: 120px;
 	}
 
 	.title {
@@ -80,6 +89,7 @@
 	}
 
 	.info-container p {
+		margin-top: 1rem;
 		color: var(--lightGray);
 	}
 
@@ -89,15 +99,15 @@
 		}
 
 		.big .info-container {
+			width: 70%;
 			text-align: left;
-			margin-left: 2rem;
 			align-self: flex-start;
+			margin-block: auto;
 		}
 
 		.big .image-container {
 			width: 200px;
 			height: 200px;
-			margin-left: 4rem;
 		}
 	}
 

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Card from '../../components/Shared/Card/Card.svelte';
+	import projects from '$lib/project';
 
 	// TODO:
 	// Projects loading
@@ -68,78 +69,24 @@
 		</div>
 	</div>
 	<div class="projects-list">
-		<Card
-			cardData={{
-				image: '',
-				title: 'OpenStudioIDE',
-				link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
-				size: 'big',
-				description: 'a built in-house IDE for OpenStudio'
-			}}
-		/>
-		<Card
-			cardData={{
-				image: '',
-				title: 'OpenStudioLauncher',
-				link: 'https://github.com/OpenStudioCorp/OpenStudioLauncher',
-				size: 'big',
-				description: 'a launcher for games/projects '
-			}}
-		/>
-		<Card
-			cardData={{
-				image: '',
-				title: 'PythonicOS',
-				link: 'https://github.com/OpenStudioCorp/PythonicOS',
-				size: 'big',
-				description: 'a OpenSource Display/desktop manager for linux'
-			}}
-		/>
-
-		<Card
-			cardData={{
-				image: '',
-				title: 'Pyton',
-				link: 'https://github.com/OpenStudioCorp/Pyton',
-				size: 'big',
-				description: 'the official Pyton Package manager'
-			}}
-		/>
-		<Card
-			cardData={{
-				image: '',
-				title: 'OpenStudioIDE',
-				link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
-				size: 'big',
-				description: 'the official OpenStudio C# IDE'
-			}}
-		/>
-		<Card
-			cardData={{
-				image: '',
-				title: 'OpenStudioPYIDE',
-				link: 'https://github.com/charlie-sans/OpenStudioPYIDE',
-				size: 'big',
-				description: 'the official OpenStudioPython IDE'
-			}}
-		/>
-		<Card
-			cardData={{
-				image: '',
-				title: 'Pyton',
-				link: 'https://github.com/OpenStudioCorp/Pyton',
-				size: 'big',
-				description: 'the official Pyton Package manager'
-			}}
-		/>
-
-		
+		{#each projects as project}
+			<Card
+				cardData={{
+					size: 'big',
+					title: project.title,
+					image: `projectsLogos/${project.image}`,
+					link: project.link,
+					description: project.description
+				}}
+			/>
+		{/each}
 	</div>
 </main>
 
 <style>
 	* {
 		font-size: var(--normalFontSize);
+		z-index: 10;
 	}
 	main {
 		margin-top: 3rem;

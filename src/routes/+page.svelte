@@ -2,8 +2,8 @@
 	import Card from '../components/Shared/Card/Card.svelte';
 	import MapPin from '../components/MapPin/MapPin.svelte';
 	import locations from '$lib/locations';
-	const joinButtonClickHandler = () => {
-		window.open('https://discord.gg/7cFCB8qBkf', '_blank');
+	const ButtonClickHandler = (link: string, target: '_blank' | '_self') => {
+		window.open(link, target);
 	};
 </script>
 
@@ -16,7 +16,10 @@
 	</p>
 
 	<div class="buttons">
-		<button class="animation" on:click={() => joinButtonClickHandler()}>Join us</button>
+		<button
+			class="animation"
+			on:click={() => ButtonClickHandler('https://discord.gg/7cFCB8qBkf', '_blank')}>Join us</button
+		>
 		<a href="#main-texts">Explore more</a>
 	</div>
 
@@ -35,46 +38,50 @@
 			We are a community of open source developers, from across the world. We Chat, Learn, Share,
 			and Build with each other
 		</p>
-		<a href="#">Want to Join?</a>
+		<a href="https://discord.gg/7cFCB8qBkf" target="_blank">Want to Join?</a>
 	</div>
 	<div class="projects">
 		<h2>What have we built?</h2>
 		<div class="projects-cards">
 			<Card
 				cardData={{
-					image: '',
-					title: 'Project 1',
-					link: '',
+					image: 'projectsLogos/noteblock.png',
+					title: 'NoteBlockStudioVR',
+					link: 'https://github.com/OpenStudioCorp/OpenNoteBlockStudioVR',
 					size: 'small',
 					alignment: 'top'
 				}}
 			/>
 			<Card
 				cardData={{
-					image: '',
-					title: 'Project 2',
-					link: '',
+					image: 'projectsLogos/PythonicOS.png',
+					title: 'PythonicOS',
+					link: 'https://github.com/OpenStudioCorp/PythonicOS',
 					size: 'small',
 					alignment: 'bottom'
 				}}
 			/>
 			<Card
 				cardData={{
-					image: '',
-					title: 'Project 3',
-					link: '',
+					image: 'projectsLogos/noteblock.png',
+					title: 'OpenStudioIDE',
+					link: 'https://github.com/OpenStudioCorp/OpenStudioIDE',
 					size: 'small',
 					alignment: 'middle'
 				}}
 			/>
 		</div>
-		<button class="viewAll-button animation">View All</button>
+		<button
+			class="viewAll-button animation"
+			on:click={() => ButtonClickHandler('/projects', '_self')}>View All</button
+		>
 	</div>
 </main>
 
 <style>
 	* {
 		font-size: var(--normalFontSize);
+		z-index: 10;
 	}
 
 	.colored-word {
@@ -172,7 +179,7 @@
 	}
 
 	.viewAll-button {
-		border: 3px solid var(--red);
+		border: 3px solid var(--white);
 		padding-inline: 2rem;
 		padding-block: 0.2rem;
 		border-radius: 10px;
@@ -181,6 +188,7 @@
 	}
 	.viewAll-button:hover {
 		background-color: var(--red);
+		border-color: var(--red);
 	}
 	@media screen and (min-width: 640px) {
 		:root {
