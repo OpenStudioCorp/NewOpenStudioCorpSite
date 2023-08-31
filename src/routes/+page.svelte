@@ -54,7 +54,7 @@
 			/>
 			<Card
 				cardData={{
-					image: 'assets/PythonicOS.png',
+					image: 'projectsLogos/PythonicOS.png',
 					title: 'PythonicOS',
 					link: 'https://github.com/OpenStudioCorp/PythonicOS',
 					size: 'small',

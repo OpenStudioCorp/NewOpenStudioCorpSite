@@ -13,7 +13,11 @@
 	export let cardData: Props;
 </script>
 
-<div class={`${cardData.size} card ${cardData.size === 'small' ? cardData.alignment : ''}`}>
+<div
+	class={`${cardData.size} card ${
+		cardData.size === 'small' && cardData.alignment ? cardData.alignment : ''
+	}`}
+>
 	<div class="image-container">
 		<img src={cardData.image} alt={cardData.title} />
 	</div>
@@ -53,6 +57,7 @@
 
 	img {
 		transition: all 0.3s;
+		border-radius: 20px;
 		width: 120px;
 	}
 
