@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Card from '../../components/Shared/Card/Card.svelte';
+	import developers from '$lib/developer';
 	import PageTransitions from '../../components/Shared/PageTransitions/PageTransitions.svelte';
 
 	// TODO:
@@ -44,143 +45,17 @@
 <main>
 	<PageTransitions>
 		<div class="projects-list">
-			<Card
-				cardData={{
-					image: '',
-					title: 'charlie_san',
-					link: '',
-					size: 'big',
-					description: 'just a house cat dammit'
-				}}
-			/>
-
-			<Card
-				cardData={{
-					image: '',
-					title: 'souriena',
-					link: '',
-					size: 'big',
-					description: 'Charlieeeee you cant copy that much html'
-				}}
-			/>
-
-			<Card
-				cardData={{
-					image: '',
-					title: 'Except',
-					link: '',
-					size: 'big',
-					description: 'just dont die ¯_(ツ)_/¯'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'DieDerick87',
-					link: '',
-					size: 'big',
-					description: 'Gday mate! how are ya'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'ProSureString',
-					link: '',
-					size: 'big',
-					description: 'just keep smiling even tho they look like a bomb'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'a750',
-					link: '',
-					size: 'big',
-					description: 'just an intel GPU'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'Syembol',
-					link: '',
-					size: 'big',
-					description: 'pizza time'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'Samuel Venable',
-					link: '',
-					size: 'big',
-					description: 'C++ is better then python'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'Project three',
-					link: '',
-					size: 'big',
-					description: 'tralala'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'TheBugCoder',
-					link: '',
-					size: 'big',
-					description: 'gotta work till there aint no bugs anymore'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'erni',
-					link: '',
-					size: 'big',
-					description: 'music is cool'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'AlanVR',
-					link: '',
-					size: 'big',
-					description: 'i save with Pilk'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'Beatzoid',
-					link: '',
-					size: 'big',
-					description: 'yeah'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'KiyoKiyotaka',
-					link: '',
-					size: 'big',
-					description: 'i agree?'
-				}}
-			/>
-			<Card
-				cardData={{
-					image: '',
-					title: 'Dunkin',
-					link: '',
-					size: 'big',
-					description: 'are you expecting me to say something smart?'
-				}}
-			/>
+			{#each developers as developer}
+				<Card
+					cardData={{
+						size: 'big',
+						image: `developerProfiles/${developer.image}`,
+						title: developer.name,
+						link: developer.link,
+						description: developer.description
+					}}
+				/>
+			{/each}
 		</div>
 	</PageTransitions>
 </main>
