@@ -8,23 +8,12 @@
 	// Projects loading
 	const TEST = true;
 	const HASHTAGS_IN_PROGRESS_BAR = 30;
-	const MAX_QUERY_LENGTH = 30;
 
 	// [0-1]
 	let loadingProgress = 0;
-	let searchQuery: string;
+	let searchQuery = '';
 
 	$: hashesToFill = Math.floor(loadingProgress * HASHTAGS_IN_PROGRESS_BAR);
-
-	$: if (searchQuery != undefined) {
-		// ensures triggering on variable change
-		let trimmedQuery = searchQuery.trim();
-		if (trimmedQuery.length > MAX_QUERY_LENGTH) {
-			trimmedQuery = trimmedQuery.substring(0, 30);
-		}
-
-		console.log('searching for: ', trimmedQuery);
-	}
 
 	if (TEST) {
 		const t = () => {
@@ -72,15 +61,17 @@
 		</div>
 		<div class="projects-list">
 			{#each projects as project}
-				<Card
-					cardData={{
-						size: 'big',
-						title: project.title,
-						image: `projectsLogos/${project.image}`,
-						link: project.link,
-						description: project.description
-					}}
-				/>
+				{#if project.description.toLowerCase().includes(searchQuery)}
+					<Card
+						cardData={{
+							size: 'big',
+							title: project.title,
+							image: `projectsLogos/${project.image}`,
+							link: project.link,
+							description: project.description
+						}}
+					/>
+				{/if}
 			{/each}
 		</div>
 	</PageTransitions>

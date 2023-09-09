@@ -2,6 +2,9 @@
 	import developers from '$lib/developer';
 	import Card from '../../components/Shared/Card/Card.svelte';
 	import PageTransitions from '../../components/Shared/PageTransitions/PageTransitions.svelte';
+	const ButtonClickHandler = (link: string, target: '_blank' | '_self') => {
+		window.open(link, target);
+	};
 </script>
 
 <header>
@@ -41,6 +44,9 @@
 				/>
 			{/each}
 		</div>
+		<button class="button animation" on:click={() => ButtonClickHandler('/team', '_self')}
+			>More Info</button
+		>
 	</PageTransitions>
 </main>
 
@@ -87,6 +93,18 @@
 		justify-content: center;
 		gap: 2rem;
 	}
+	.button {
+		border: 3px solid var(--white);
+		padding-inline: 2rem;
+		padding-block: 0.2rem;
+		border-radius: 10px;
+		margin-top: 2rem;
+		font-size: var(--buttonFontSize);
+	}
+	.button:hover {
+		background-color: var(--red);
+		border-color: var(--red);
+	}
 	@media screen and (min-width: 640px) {
 		:root {
 			--titleFontSize: 2.2rem;
@@ -104,6 +122,7 @@
 		:root {
 			--titleFontSize: 3rem;
 			--normalFontSize: 1.2rem;
+			--buttonFontSize: 1.5rem;
 		}
 		.developer-cards {
 			row-gap: 3rem;

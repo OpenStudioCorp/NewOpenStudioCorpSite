@@ -43,7 +43,7 @@
 				href="/team"
 				class:active={$page.url.pathname === '/team'}
 				class="animation"
-				on:click={() => (navButtonActive = false)}>Meet our team</a
+				on:click={() => (navButtonActive = false)}>team</a
 			>
 		</div>
 	{/if}
