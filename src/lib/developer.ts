@@ -27,7 +27,7 @@ const developers: Developer[] = [
 		name: 'H4rl',
 		image: 'H4rl.png',
 		link: 'https://github.com/h4rldev',
-		description: ''
+		description: 'i will nuke your house with crabs'
 	},
 	{
 		name: 'ProSureString',
@@ -51,7 +51,7 @@ const developers: Developer[] = [
 		name: 'shabman',
 		image: 'shabman.gif',
 		link: 'https://github.com/shabman',
-		description: ''
+		description: 'thats a bit shabby innit?'
 	},
 	{
 		name: 'Dunkin',
