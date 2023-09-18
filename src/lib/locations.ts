@@ -30,9 +30,9 @@ const locations: Location[] = [
 		left: 70
 	},
 	{
-		//Australia
-		top: 75,
-		left: 85
+		//Australia melbourne (bottom)
+		top: 85,
+		left: 87
 	},
 	{
 		//South Africa
