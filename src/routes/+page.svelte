@@ -9,6 +9,15 @@
 </script>
 
 <header>
+	<!-- Google tag (gtag.js) !-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11332296851"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11332296851');
+</script>
 	<PageTransitions>
 		<h1>
 			Let's Make <span class="colored-word">Changes</span> <br />Together, AnyWhere

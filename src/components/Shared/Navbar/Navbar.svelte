@@ -62,9 +62,12 @@
 			<a href="/projects" class:active={$page.url.pathname === '/projects'} class="animation"
 				>Project</a
 			>
+			<a  href="/extras/admin" target="_blank" class="join-button animation">login</a>
 		</div>
 		<a href="https://discord.gg/7cFCB8qBkf" target="_blank" class="join-button animation">Join us</a
+			
 		>
+		
 	{/if}
 </nav>
 

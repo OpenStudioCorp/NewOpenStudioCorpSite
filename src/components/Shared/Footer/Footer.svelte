@@ -25,7 +25,8 @@
 	</div>
 	<p>
 		Designed and Developed by <a href="https://github.com/sourena-kazemi" target="_blank">Sourena</a
-		>
+		> ,
+		<a href="https://github.com/Charlie-sans">charlie-sans</a>
 		and
 		<a href="https://github.com/Ex-ce-pt" target="_blank">Exedice</a> From
 		<a href="https://github.com/OpenStudioCorp" target="_blank">OpenStudio</a>

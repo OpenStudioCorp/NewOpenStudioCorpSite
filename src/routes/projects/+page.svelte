@@ -32,6 +32,15 @@
 </script>
 
 <main>
+	<!-- Google tag (gtag.js) !-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11332296851"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11332296851');
+</script>
 	<PageTransitions>
 		<div class="projects-load-label">
 			<p><span class="red-text">$</span> projects load --all</p>
