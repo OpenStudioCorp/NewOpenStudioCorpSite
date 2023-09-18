@@ -3,6 +3,7 @@
 	import Card from '../../components/Shared/Card/Card.svelte';
 	import projects from '$lib/project';
 	import PageTransitions from '../../components/Shared/PageTransitions/PageTransitions.svelte';
+	
 
 	// TODO:
 	// Projects loading
@@ -71,6 +72,7 @@
 		<div class="projects-list">
 			{#each projects as project}
 				{#if project.description.toLowerCase().includes(searchQuery)}
+				<PageTransitions>
 					<Card
 						cardData={{
 							size: 'big',
@@ -80,6 +82,7 @@
 							description: project.description
 						}}
 					/>
+				</PageTransitions>
 				{/if}
 			{/each}
 		</div>
