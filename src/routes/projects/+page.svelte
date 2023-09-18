@@ -3,6 +3,7 @@
 	import Card from '../../components/Shared/Card/Card.svelte';
 	import projects from '$lib/project';
 	import PageTransitions from '../../components/Shared/PageTransitions/PageTransitions.svelte';
+	
 
 	// TODO:
 	// Projects loading
@@ -32,6 +33,15 @@
 </script>
 
 <main>
+	<!-- Google tag (gtag.js) !-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11332296851"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11332296851');
+</script>
 	<PageTransitions>
 		<div class="projects-load-label">
 			<p><span class="red-text">$</span> projects load --all</p>
@@ -62,6 +72,7 @@
 		<div class="projects-list">
 			{#each projects as project}
 				{#if project.description.toLowerCase().includes(searchQuery)}
+				<PageTransitions>
 					<Card
 						cardData={{
 							size: 'big',
@@ -71,6 +82,7 @@
 							description: project.description
 						}}
 					/>
+				</PageTransitions>
 				{/if}
 			{/each}
 		</div>
