@@ -182,7 +182,7 @@
 		border-radius: 10px;
 		padding: 0.1rem 1rem;
 		z-index: 15;
-		margin-left: 5px;
+		margin-left: 10px;
 	}
 	.login-button:hover {
 		background-color: transparent;
