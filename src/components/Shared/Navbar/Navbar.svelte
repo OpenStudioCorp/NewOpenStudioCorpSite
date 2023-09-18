@@ -175,13 +175,13 @@
 		color: var(--white);
 	}
 	.login-button {
-		background-color:  rgb(153, 119, 255);
+		background-color: var(--white);
 		color: var(--darkBlue);
-		border: solid 2px var(--lightGray);
+		border: solid 2px var(--white);
 		width: fit-content;
-		border-radius: 100px;
-		padding: 0.1rem 2rem;
-		z-index: 20;
+		border-radius: 10px;
+		padding: 0.1rem 1rem;
+		z-index: 15;
 		margin-left: 5px;
 	}
 	.login-button:hover {
