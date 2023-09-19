@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Gradient from '../Gradient/Gradient.svelte';
 	import { page } from '$app/stores';
+	import PageTransitions from '../PageTransitions/PageTransitions.svelte';
 	let screenWidth: number;
 	const toggleButtonState = () => {
 		navButtonActive = !navButtonActive;
@@ -10,6 +11,7 @@
 
 <svelte:window bind:innerWidth={screenWidth} />
 <nav>
+	
 	{#if screenWidth < 1024}
 		<a href="/" class="logo">OpenStudio</a>
 		<button class:active-button={navButtonActive} on:click={toggleButtonState}>
@@ -45,6 +47,7 @@
 				class="animation"
 				on:click={() => (navButtonActive = false)}>team</a
 			>
+			<a  href="/extras/admin" target="_blank" class="login-button animation">login</a>
 		</div>
 	{/if}
 
@@ -62,11 +65,11 @@
 			<a href="/projects" class:active={$page.url.pathname === '/projects'} class="animation"
 				>Project</a
 			>
-			<a  href="/extras/admin" target="_blank" class="join-button animation">login</a>
-		</div>
-		<a href="https://discord.gg/7cFCB8qBkf" target="_blank" class="join-button animation">Join us</a
 			
-		>
+		</div>
+		<a href="https://discord.gg/7cFCB8qBkf" target="" class="join-button animation">Join us</a
+			
+		><a  href="/extras/admin" target="_blank" class="login-button animation">login</a>
 		
 	{/if}
 </nav>
@@ -84,11 +87,14 @@
 	}
 
 	.nav-links {
-		display: flex;
-		width: 30%;
-		justify-content: space-around;
-		z-index: 20;
-	}
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
+  z-index: 20;
+  align-items: center;
+  margin-left: auto;
+}
+
 	.logo {
 		color: var(--white);
 		z-index: 20;
@@ -160,10 +166,25 @@
 		border: solid 2px var(--white);
 		width: fit-content;
 		border-radius: 10px;
-		padding: 0.1rem 2rem;
-		z-index: 20;
+		padding: 0.1rem 1rem;
+		z-index: 15;
+		margin-left: auto;
 	}
 	.join-button:hover {
+		background-color: transparent;
+		color: var(--white);
+	}
+	.login-button {
+		background-color: var(--white);
+		color: var(--darkBlue);
+		border: solid 2px var(--white);
+		width: fit-content;
+		border-radius: 10px;
+		padding: 0.1rem 1rem;
+		z-index: 15;
+		margin-left: 10px;
+	}
+	.login-button:hover {
 		background-color: transparent;
 		color: var(--white);
 	}
