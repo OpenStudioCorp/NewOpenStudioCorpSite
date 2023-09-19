@@ -52,7 +52,8 @@
 						image: `developerProfiles/${developer.image}`,
 						title: developer.name,
 						link: developer.link,
-						description: developer.description
+						description: developer.description,
+						skills: developer.skills
 					}}
 				/>
 			{/each}
