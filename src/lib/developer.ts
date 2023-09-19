@@ -42,10 +42,16 @@ const developers: Developer[] = [
 		description: 'just dont die ¯_(ツ)_/¯'
 	},
 	{
+		name: 'DieDerick87',
+		image: 'derick.jpg',
+		link: 'https://github.com/sourena-kazemi',
+		description: 'Just another dude learning new stuff, screw you sour-orange and your tailwind'
+	},
+	{
 		name: 'Sourena',
 		image: 'sourena.png',
 		link: 'https://github.com/sourena-kazemi',
-		description: 'Charlieeeee you cant copy that much html'
+		description: 'Charlieeeee you cant copy that much html, plus i love tailwind and hate diederick87'
 	},
 	{
 		name: 'shabman',
