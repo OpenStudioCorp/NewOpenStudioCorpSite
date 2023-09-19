@@ -1,0 +1,36 @@
+[
+    {
+        "projects":
+        [
+
+            {
+                "name": "Project 1",
+                "description": "OpenStudiochamber",
+                "id": "1",
+                "version": "1.0.0"
+            },
+            {
+                "name": "Project 2",
+                "description": "OpenStudioLauncher",
+                "id": "1",
+                "version": "1.0.0"
+            },
+            {
+                "name": "Project 3",
+                "description": "OpenNoteBlockStudioVR",
+                "id": "1",
+                "version": "1.0.0"
+            },
+            {
+                "name": "openNoteBlockStudioAndroid",
+                "description": "OpenNoteBlockStudioAndroid",
+                "id": "1",
+                "version": "1.0.0"
+            }
+        ],
+        "version":
+        {
+            "version": "1.1"
+        }
+    }
+]       
