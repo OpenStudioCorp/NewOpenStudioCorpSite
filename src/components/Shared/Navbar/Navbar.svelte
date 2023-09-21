@@ -11,7 +11,6 @@
 
 <svelte:window bind:innerWidth={screenWidth} />
 <nav>
-	
 	{#if screenWidth < 1024}
 		<a href="/" class="logo">OpenStudio</a>
 		<button class:active-button={navButtonActive} on:click={toggleButtonState}>
@@ -47,7 +46,11 @@
 				class="animation"
 				on:click={() => (navButtonActive = false)}>team</a
 			>
-			<a  href="/extras/admin" target="_blank" class="login-button animation">login</a>
+			<a
+				href="/extras/admin"
+				class:active={$page.url.pathname === '/extras/admin'}
+				on:click={() => (navButtonActive = false)}>login</a
+			>
 		</div>
 	{/if}
 
@@ -65,12 +68,11 @@
 			<a href="/projects" class:active={$page.url.pathname === '/projects'} class="animation"
 				>Project</a
 			>
-			
 		</div>
-		<a href="https://discord.gg/7cFCB8qBkf" target="" class="join-button animation">Join us</a
-			
-		><a  href="/extras/admin" target="_blank" class="login-button animation">login</a>
-		
+		<div class="buttons-container">
+			<a href="https://discord.gg/7cFCB8qBkf" target="" class="join-button animation">Join us</a>
+			<a href="/extras/admin" class="login-button animation">login</a>
+		</div>
 	{/if}
 </nav>
 
@@ -87,13 +89,12 @@
 	}
 
 	.nav-links {
-  display: flex;
-  width: 30%;
-  justify-content: space-around;
-  z-index: 20;
-  align-items: center;
-  margin-left: auto;
-}
+		display: flex;
+		width: 30%;
+		justify-content: space-around;
+		z-index: 20;
+		align-items: center;
+	}
 
 	.logo {
 		color: var(--white);
@@ -159,7 +160,9 @@
 	.mobile-sidebar-visible {
 		inset: 0;
 	}
-
+	.buttons-container {
+		z-index: 20;
+	}
 	.join-button {
 		background-color: var(--white);
 		color: var(--darkBlue);
@@ -167,26 +170,23 @@
 		width: fit-content;
 		border-radius: 10px;
 		padding: 0.1rem 1rem;
-		z-index: 15;
-		margin-left: auto;
 	}
 	.join-button:hover {
 		background-color: transparent;
 		color: var(--white);
 	}
 	.login-button {
-		background-color: var(--white);
-		color: var(--darkBlue);
+		background-color: transparent;
+		color: var(--white);
 		border: solid 2px var(--white);
 		width: fit-content;
 		border-radius: 10px;
-		padding: 0.1rem 1rem;
-		z-index: 15;
+		padding: 0.1rem 1.5rem;
 		margin-left: 10px;
 	}
 	.login-button:hover {
-		background-color: transparent;
-		color: var(--white);
+		background-color: var(--white);
+		color: var(--darkBlue);
 	}
 	a {
 		color: var(--lightGray);

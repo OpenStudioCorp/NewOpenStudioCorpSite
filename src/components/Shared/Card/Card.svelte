@@ -5,7 +5,7 @@
 		link: string;
 	} & (
 		| { size: 'small'; alignment?: 'top' | 'middle' | 'bottom' }
-		| { size: 'big'; description: string }
+		| { size: 'big'; description: string; skills: string }
 	);
 </script>
 
@@ -25,6 +25,9 @@
 	<div class="info-container">
 		<a href={cardData.link} target="_blank" class="title">{cardData.title}</a>
 		<p>{cardData.size === 'big' ? cardData.description : ''}</p>
+		{#if cardData.size === 'big' && cardData.skills}
+			<p class="skills">{cardData.skills}</p>
+		{/if}
 	</div>
 </div>
 
@@ -93,6 +96,9 @@
 	.info-container p {
 		margin-top: 1rem;
 		color: var(--lightGray);
+	}
+	.info-container .skills {
+		color: var(--white);
 	}
 
 	@media screen and (min-width: 640px) {
