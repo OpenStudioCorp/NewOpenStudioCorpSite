@@ -1,8 +1,6 @@
 [
     {
-        "projects":
-        [
-
+        "projects": [
             {
                 "name": "Project 1",
                 "description": "OpenStudiochamber",
@@ -28,9 +26,8 @@
                 "version": "1.0.0"
             }
         ],
-        "version":
-        {
+        "version": {
             "version": "1.1"
         }
     }
-]       
+]
