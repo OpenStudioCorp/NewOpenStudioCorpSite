@@ -1,131 +1,202 @@
-<script>
-  const toggleButtonState = () => {
-    navButtonActive = !navButtonActive
-  }
-  let screenWidth = window.innerWidth
-  let navButtonActive = false
-  let currentLocation = "home"
+<script lang="ts">
+	import Gradient from '../Gradient/Gradient.svelte';
+	import { page } from '$app/stores';
+	import PageTransitions from '../PageTransitions/PageTransitions.svelte';
+	let screenWidth: number;
+	const toggleButtonState = () => {
+		navButtonActive = !navButtonActive;
+	};
+	let navButtonActive = false;
 </script>
 
-<nav class="navbar">
-  {#if screenWidth < 1024}
-    <a href="#/">OpenStudio</a>  <!-- TODO: apply styles -->
-    <button
-      class={`${navButtonActive ? "active-button" : "button"}`}
-      on:click={toggleButtonState}
-    >
-      <div class="line first-line" />
-      <div class="line second-line" />
-      <div class="line third-line" />
-    </button>
-    <div
-      class={`mobile-sidebar ${
-        navButtonActive ? "mobile-sidebar-visible" : null
-      } ${currentLocation}`}
-    >
-      <a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
+<svelte:window bind:innerWidth={screenWidth} />
+<nav>
+	{#if screenWidth < 1024}
+		<a href="/" class="logo">OpenStudio</a>
+		<button class:active-button={navButtonActive} on:click={toggleButtonState}>
+			<div />
+			<div />
+			<div />
+		</button>
+		<div class="mobile-sidebar" class:mobile-sidebar-visible={navButtonActive}>
+			<a href="https://discord.gg/7cFCB8qBkf" target="_blank" class="join-button animation"
+				>Join us</a
+			>
+			<a
+				href="/"
+				class:active={$page.url.pathname === '/'}
+				class="animation"
+				on:click={() => (navButtonActive = false)}>Home</a
+			>
+			<a
+				href="/about"
+				class:active={$page.url.pathname === '/about'}
+				class="animation"
+				on:click={() => (navButtonActive = false)}>About</a
+			>
+			<a
+				href="/projects"
+				class:active={$page.url.pathname === '/projects'}
+				class="animation"
+				on:click={() => (navButtonActive = false)}>Project</a
+			>
+			<a
+				href="/team"
+				class:active={$page.url.pathname === '/team'}
+				class="animation"
+				on:click={() => (navButtonActive = false)}>team</a
+			>
+			<a
+				href="/extras/admin"
+				class:active={$page.url.pathname === '/extras/admin'}
+				on:click={() => (navButtonActive = false)}>login</a
+			>
+		</div>
+	{/if}
 
-      <!-- TODO: apply styles -->
-      <a href="/#/">Home</a>
-      <a href="/#/about">About</a>
-      <a href="/#/projects">Project</a>
-    </div>
-  {/if}
-  {#if screenWidth >= 1024}
-    <a href="#/">OpenStudio</a>  <!-- TODO: apply styles -->
-    <div class={`nav-links ${currentLocation}`}>
-      <!-- TODO: apply styles -->
-      <a href="/#/">Home</a>
-      <a href="/#/about">About</a>
-      <a href="/#/projects">Project</a>
-    </div>
-    <a href="https://discord.gg/7cFCB8qBkf" class="join-button">Join us</a>
-  {/if}
+	{#if screenWidth >= 1024}
+		<Gradient
+			position={`${
+				$page.url.pathname === '/' ? 'left' : $page.url.pathname === '/about' ? 'center' : 'right'
+			}`}
+		/>
+		<a href="/" class="logo">OpenStudio</a>
+		<div class="nav-links">
+			<a href="/" class:active={$page.url.pathname === '/'} class="animation">Home</a>
+			<a href="/about" class:active={$page.url.pathname === '/about'} class="animation">About</a>
+			<a href="/team" class:active={$page.url.pathname === '/team'} class="animation">Team</a>
+			<a href="/projects" class:active={$page.url.pathname === '/projects'} class="animation"
+				>Project</a
+			>
+		</div>
+		<div class="buttons-container">
+			<a href="https://discord.gg/7cFCB8qBkf" target="" class="join-button animation">Join us</a>
+			<a href="/extras/admin" class="login-button animation">login</a>
+		</div>
+	{/if}
 </nav>
 
 <style>
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: 1.5rem;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  .nav-links {
-    display: flex;
-    width: 30%;
-    justify-content: space-around;
-  }
-  .line {
-    width: 30px;
-    height: 2px;
-    background-color: var(--white);
-    bottom: 5px;
-    position: absolute;
-    transition: all 0.3s;
-  }
-  .second-line {
-    bottom: 10px;
-  }
-  .third-line {
-    bottom: 15px;
-  }
-  .button,
-  .active-button {
-    position: relative;
-    z-index: 2;
-    width: 30px;
-    height: 21px;
-  }
-  .active-button .line {
-    top: 50%;
-    left: 50%;
-  }
-  .active-button .first-line {
-    transform: rotate(-45deg) translateY(-50%);
-  }
-  .active-button .second-line {
-    display: none;
-  }
-  .active-button .third-line {
-    transform: rotate(45deg) translateY(-50%);
-  }
-  .mobile-sidebar {
-    transition: all 0.3s;
-    position: absolute;
-    inset: 0 0 0 100%;
-    background-color: var(--darkBlue);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    overflow-x: hidden;
-  }
-  .mobile-sidebar-visible {
-    inset: 0;
-  }
-  .join-button {
-    background-color: var(--white);
-    color: var(--darkBlue);
-    width: fit-content;
-    border-radius: 10px;
-    padding: 0.2rem 2rem;
-  }
-  :global(.link) {
-    color: var(--lightGray);
-  }
-  .home :global(.home-link) {
-    color: var(--white);
-    text-decoration: underline;
-  }
-  .about :global(.about-link) {
-    color: var(--white);
-    text-decoration: underline;
-  }
-  .projects :global(.projects-link) {
-    color: var(--white);
-    text-decoration: underline;
-  }
+	nav {
+		display: flex;
+		position: relative;
+		justify-content: space-between;
+		align-items: center;
+		padding-inline: 1.5rem;
+		margin-top: 1rem;
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+
+	.nav-links {
+		display: flex;
+		width: 30%;
+		justify-content: space-around;
+		z-index: 20;
+		align-items: center;
+	}
+
+	.logo {
+		color: var(--white);
+		z-index: 20;
+		font-size: 1.4rem;
+	}
+	button {
+		position: relative;
+		z-index: 40;
+		width: 30px;
+		height: 21px;
+		margin-right: 1rem;
+	}
+
+	button > div {
+		width: 50px;
+		height: 4px;
+		border-radius: 20px;
+		background-color: var(--white);
+		bottom: 0.5rem;
+		position: absolute;
+		transition: all 0.3s;
+	}
+
+	button > div:nth-of-type(2) {
+		bottom: 1rem;
+	}
+
+	button > div:nth-of-type(3) {
+		bottom: 1.5rem;
+	}
+
+	button.active-button > div {
+		top: 50%;
+		left: 50%;
+	}
+
+	button.active-button > div:nth-of-type(1) {
+		transform: rotate(-45deg) translateY(-50%);
+	}
+
+	button.active-button > div:nth-of-type(2) {
+		display: none;
+	}
+
+	button.active-button > div:nth-of-type(3) {
+		transform: rotate(45deg) translateY(-50%);
+	}
+
+	.mobile-sidebar {
+		transition: all 0.3s;
+		position: fixed;
+		inset: 0 0 0 100%;
+		background-color: var(--darkBlue);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		overflow-x: hidden;
+		z-index: 30;
+	}
+
+	.mobile-sidebar-visible {
+		inset: 0;
+	}
+	.buttons-container {
+		z-index: 20;
+	}
+	.join-button {
+		background-color: var(--white);
+		color: var(--darkBlue);
+		border: solid 2px var(--white);
+		width: fit-content;
+		border-radius: 10px;
+		padding: 0.1rem 1rem;
+	}
+	.join-button:hover {
+		background-color: transparent;
+		color: var(--white);
+	}
+	.login-button {
+		background-color: transparent;
+		color: var(--white);
+		border: solid 2px var(--white);
+		width: fit-content;
+		border-radius: 10px;
+		padding: 0.1rem 1.5rem;
+		margin-left: 10px;
+	}
+	.login-button:hover {
+		background-color: var(--white);
+		color: var(--darkBlue);
+	}
+	a {
+		color: var(--lightGray);
+	}
+
+	.active {
+		color: var(--white);
+		text-decoration: underline;
+	}
+	.active:hover {
+		text-decoration-color: var(--red);
+	}
 </style>
