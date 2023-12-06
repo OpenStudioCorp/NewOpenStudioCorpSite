@@ -75,6 +75,13 @@ const developers: Developer[] = [
 		link: 'https://github.com/DaviesOwonibi',
 		description: 'are you expecting me to say something smart?',
 		skills: ''
+	},
+	{
+		name: 'Divine',
+		image: 'Divine.jpg',
+		link: 'https://github.com/divinewrites',
+		description: 'that one epic guy',
+		skills: 'ts/js/rust/python and other stupid languages'
 	}
 ];
 export default developers;
