@@ -23,6 +23,7 @@
 </script>
 
 <main>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <div style="z-index:auto">
 
         <h1><img src="/pngs/logo.png" alt=""></h1>
