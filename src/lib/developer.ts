@@ -80,7 +80,7 @@ const developers: Developer[] = [
 		name: 'Divine',
 		image: 'Divine.jpg',
 		link: 'https://github.com/divinewrites',
-		description: 'that one epic guy',
+		description: 'professional nigerian prince',
 		skills: 'ts/js/rust/python and other stupid languages'
 	}
 ];
