@@ -38,6 +38,13 @@ const projects: Project[] = [
 			'OpenNoteBlockStudioVr is a vr DAW/music creation software where you create noteblock songs by grabbing and placing cute little blocks',
 		image: 'noteblock.png',
 		link: 'https://github.com/OpenStudioCorp/OpenNoteBlockStudioVR'
+	},
+	{
+		title: 'Cubescript',
+		description:
+			'Cubescript, a interactive programing language designed for simplicityand ease of use.',
+		image: 'noteblock.png',
+		link: 'https://github.com/OpenStudioCorp/CSVM'
 	}
 ];
 export default projects;
