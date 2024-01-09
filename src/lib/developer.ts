@@ -82,6 +82,13 @@ const developers: Developer[] = [
 		link: 'https://github.com/divinewrites',
 		description: 'professional nigerian prince',
 		skills: 'ts/js/rust/python and other stupid languages'
+	},
+	{
+		name: 'Jason',
+		image: 'jasonuc.jpg',
+		link: 'https://github.com/jasonuc',
+		description: 'cyber maestro',
+		skills: 'Next.js, React, Astro, TypeScript & JavaScript, Tailwind'
 	}
 ];
 export default developers;
