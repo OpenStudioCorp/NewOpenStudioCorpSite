@@ -5,25 +5,10 @@
       "Version": "1.0"
     },
     {
-        "Name": "CSVM",
-        "Description": "The official CubeScript Compiler/Transpiler",
-        "Version": "1.2.1"
-      },
-    {
-        "Name": "Updater",
-        "Description": "The official Updater for everything CubeScript. libraries, the CSVM transpiler, documentation ect",
-        "Version": "1.0"
-      },
-    {
-        "Name": "home.dll",
-        "Description": "The official CubeScript Compiler/Transpiler's standard library",
-        "Version": "1.0.1"
-      },
-      {
-        "Name": "PythonicOS",
-        "Description": "PythonicOS is a Display manager for Linux",
-        "Version": "1.1"
-      },
+      "Name": "Finite",
+      "Description": "Home to the Most Skilled Developers",
+      "Version": "1.0"
+    },
       {
         "Name": "OpenStudioCorp.vercel.app",
         "Description": "The official OpenStudioCorp Site!",

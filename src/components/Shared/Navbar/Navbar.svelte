@@ -47,10 +47,12 @@
 				on:click={() => (navButtonActive = false)}>team</a
 			>
 			<a
-				href="/extras/admin"
-				class:active={$page.url.pathname === '/extras/admin'}
-				on:click={() => (navButtonActive = false)}>login</a
+				href="/Finite"
+				class:active={$page.url.pathname === '/Finite'}
+				class="animation"
+				on:click={() => (navButtonActive = false)}>Finite</a
 			>
+		
 		</div>
 	{/if}
 
@@ -68,10 +70,11 @@
 			<a href="/projects" class:active={$page.url.pathname === '/projects'} class="animation"
 				>Project</a
 			>
+			<a href="/Finite" class:active={$page.url.pathname === '/Finite'} class="animation">Finite</a>
 		</div>
 		<div class="buttons-container">
 			<a href="https://discord.gg/7cFCB8qBkf" target="" class="join-button animation">Join us</a>
-			<a href="/extras/admin" class="login-button animation">login</a>
+		
 		</div>
 	{/if}
 </nav>

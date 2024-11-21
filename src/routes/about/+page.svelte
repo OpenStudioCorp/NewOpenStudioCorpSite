@@ -19,9 +19,13 @@
 	<PageTransitions>
 		<h2 class="question-text">Who are We?</h2>
 		<p class="answer-text">
-			We are an independent organisation that allows people to find teammates for working on cool
-			and amazing things!
+			OpenStudio is a mission-driven organization dedicated to building open-source software that is 
+			free forever.
+			</p>
+			<p> Our goal is to create tools that empower individuals and communities, fostering 
+			innovation and driving global change.
 		</p>
+		<br>
 		<h2 class="question-text">What do we do?</h2>
 		<p class="answer-text">
 			We make all kinds of open-source software. Games, apps, websites... whatever you can imagine!
@@ -31,6 +35,8 @@
 			We wanted to create a place where people can freely bring their project ideas to life without
 			having to work by themselves! Communication is the key to learning!
 		</p>
+
+		
 		<h2 class="dev-section-title"><span>{'<'}</span>Meet our devs<span>{'/>'}</span></h2>
 		<div class="developer-cards">
 			{#each developers as developer}

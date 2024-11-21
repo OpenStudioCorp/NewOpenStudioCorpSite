@@ -43,6 +43,8 @@
 </script>
 
 <main>
+	<h1>Thank you to our past and present team at OpenStudio!</h1>
+	<p>none of this would have been created without the help of the tallented people below.</p>
 	<PageTransitions>
 		<div class="projects-list">
 			{#each developers as developer}
